@@ -78,3 +78,175 @@ Migrating to CreateUsers (20200210200952)
   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2020-02-10 17:25:30 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 227ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/config
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/images
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/javascripts
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/stylesheets
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/actionview-5.2.4.1/lib/assets/compiled
+  /home/qixiang/Desktop/Courses/projects/video_night/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2187718443434322515_70090214624480'
+
+Started POST "/__better_errors/e028db95a9c33eca/variables" for ::1 at 2020-02-10 17:25:31 -0500
+Started GET "/" for ::1 at 2020-02-10 17:26:47 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/config
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/images
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/javascripts
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/stylesheets
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/actionview-5.2.4.1/lib/assets/compiled
+  /home/qixiang/Desktop/Courses/projects/video_night/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2187718443434322515_70090213763920'
+
+Started POST "/__better_errors/abdcf1d6bfa84db4/variables" for ::1 at 2020-02-10 17:26:48 -0500
+Started GET "/" for ::1 at 2020-02-10 17:27:36 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/config
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/images
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/javascripts
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/stylesheets
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/actionview-5.2.4.1/lib/assets/compiled
+  /home/qixiang/Desktop/Courses/projects/video_night/node_modules:
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___2187718443434322515_70090223403940'
+
+Started POST "/__better_errors/aacfd69e6ae825f8/variables" for ::1 at 2020-02-10 17:27:36 -0500
+Started GET "/" for ::1 at 2020-02-10 17:27:39 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/config
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/images
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/javascripts
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/stylesheets
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/actionview-5.2.4.1/lib/assets/compiled
+  /home/qixiang/Desktop/Courses/projects/video_night/node_modules:
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___2187718443434322515_70090220808480'
+
+Started POST "/__better_errors/7575d068a128d0d6/variables" for ::1 at 2020-02-10 17:27:40 -0500
+Started GET "/" for ::1 at 2020-02-10 17:27:46 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-10 17:30:03 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/config
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/images
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/javascripts
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/stylesheets
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/actionview-5.2.4.1/lib/assets/compiled
+  /home/qixiang/Desktop/Courses/projects/video_night/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2187718443434322515_70090224799400'
+
+Started POST "/__better_errors/b5caab5c2b6ee562/variables" for ::1 at 2020-02-10 17:30:04 -0500
+Started GET "/" for ::1 at 2020-02-10 17:41:51 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/config
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/images
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/javascripts
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/stylesheets
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/actionview-5.2.4.1/lib/assets/compiled
+  /home/qixiang/Desktop/Courses/projects/video_night/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2187718443434322515_70090224237740'
+
+Started POST "/__better_errors/87bfe0e8aa5b0ffe/variables" for ::1 at 2020-02-10 17:41:52 -0500
+Started GET "/" for ::1 at 2020-02-10 17:42:16 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/config
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/images
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/javascripts
+  /home/qixiang/Desktop/Courses/projects/video_night/app/assets/stylesheets
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/actionview-5.2.4.1/lib/assets/compiled
+  /home/qixiang/Desktop/Courses/projects/video_night/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2187718443434322515_70089941494520'
+
+Started POST "/__better_errors/9c0e46029e8e409f/variables" for ::1 at 2020-02-10 17:42:16 -0500
+Started GET "/" for ::1 at 2020-02-10 17:42:28 -0500
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/qixiang/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2328ms (Views: 2326.2ms | ActiveRecord: 0.0ms)
+
+
