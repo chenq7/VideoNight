@@ -1,11 +1,7 @@
-// .gitignore
-
-// ... a bunch of preloaded ignores
-
-// To add:
 node_modules/
 bundle.js
 bundle.js.map
 .byebug_history
 .DS_Store
 npm-debug.log
+tmp/
