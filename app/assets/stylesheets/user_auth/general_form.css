@@ -1,0 +1,23 @@
+.demo {
+  font-size: 12px;
+  color: blue;
+  margin-bottom: 25px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-button {
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 7px;
+  padding-bottom: 10px;
+  background: #1a73e8;
+  color: white;
+  border: 1px #1a73e8;  
+  border-radius: 5px;
+  width: 70px;
+  margin-top: 7px;
+}

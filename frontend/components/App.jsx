@@ -8,11 +8,11 @@ import SignupFormContainer from './session/signup_form_container';
 
 
 const App = (props) => (
-  <div>
+  <>
     <Route exact path='/' component={GreetingContainer}/>
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
-  </div>
+  </>
 );
 
 export default App;

@@ -1,0 +1,35 @@
+.header1 {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgray;
+}
+
+.logo {
+  height: 60px;
+  width: 200px;
+  margin: 10px;
+}
+
+.sign-in, .sign-out, .user-btn{
+  position: absolute;
+  text-decoration: none;
+  width: auto;
+  height: 16px;
+  padding: 10px 16px;
+  background-color: white;
+  color: blue;
+  font-size: 14px;
+  border-radius: 2px;
+  font-weight: bold;
+  border: 1px solid blue;
+  margin: 10px;
+  top: 10px;
+  right: 10px;
+}
+
+.sign-out{
+  top: 60px;
+  right: 10px;
+}
