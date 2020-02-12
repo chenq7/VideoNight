@@ -10,12 +10,18 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   update(type) {
     return (e) => {
       this.setState({ [type]: e.currentTarget.value })
     }
+  }
+
+  handleDemo() {
+    let user = { username: "demouser", password: "demopassword" };
+    (this.props.formType === "Sign Up" ) ? this.props.loginUser(user) : this.props.processForm(user);
   }
 
   handleSubmit(e) {
@@ -27,24 +33,19 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="form">
-        <span>VideoNight</span> <br/>
+        <img src={window.logo} className="logo" alt="VideoNight" /> <br/>
         <span>{this.props.formType}</span>
         <form onSubmit={this.handleSubmit}>
-          <label>Username <br/>
-            <input type="text" value={this.state.username} onChange={this.update('username')} />
-          </label>
+          <input type="text" value={this.state.username} onChange={this.update('username')} placeholder="Username" />
           <br/>
           {this.props.formType === 'Sign Up' ? 
-            <><label>Email <br/>
-              <input type="text" value={this.state.email} onChange={this.update('email')} />
-            </label><br/></>: null }
-          <label>Password <br/>
-            <input type="password" value={this.state.password} onChange={this.update('password')} />
-          </label>
+            <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email" /> : null }
+          <input type="password" value={this.state.password} onChange={this.update('password')} placeholder="Password" />
           <br/>
           <button className="login">{this.props.formType}</button>
         </form>
-        {this.props.formType === 'Login' ? <Link to="signup">Create an account</Link> : <Link to="login">Login</Link>}
+        {this.props.formType === 'Sign In' ? <Link to="signup">Create an account</Link> : <Link to="login">Sign In</Link>}
+        <a className="demo" onClick={() => this.handleDemo()}>login as a demo user</a>
         <ul>
           {this.props.errors.session.map(error => { return (<li>{error}</li>); })}
         </ul>

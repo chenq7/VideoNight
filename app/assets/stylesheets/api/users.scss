@@ -4,23 +4,23 @@
 
 .header1 {
   font-family: sans-serif;
-  display: flex;
-  justify-content: space-between;
 }
 
 .logo {
-  width: 400px;
+  height: 60px;
+  width: 200px;
+  margin: 10px;
 }
 
 .form{
   position: absolute;
   left: 35%;
-  top: 30%;
+  top: 20%;
   border: 1px solid gray;
   padding: 20px;
   border-radius: 4px;
   height: 50%;
-  width: 25%;
+  width: 22%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,12 +36,14 @@
   height: 30px;
   border: 1px solid gray;
   border-radius: 4px;
+  margin: 7px;
 }
 
 .form span{
   font-family: sans-serif;
   font-size: 30px;
-  margin: 7px;
+  margin-top: 7px;
+  margin-bottom: 15px;
 }
 
 .form a{
@@ -78,4 +80,9 @@
   border-radius: 5px;
   width: 70px;
   margin-top: 7px;
+}
+
+.demo {
+  font-size: 12px;
+  color: blue;
 }
