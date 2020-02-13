@@ -19,9 +19,11 @@ class SignupForm extends React.Component {
     }
   }
 
-  handleDemo() {
-    let user = { username: "demo user", password: "demopassword" };
-    this.props.loginUser(user);
+  handleDemo(e) {
+    e.preventDefault();
+    // let user = { username: "demo user", password: "demopassword" };
+    // this.props.loginUser(user);
+    this.props.demoLogin().then(() => this.props.history.push('/'));
   }
 
   handleSubmit(e) {
@@ -51,7 +53,7 @@ class SignupForm extends React.Component {
 
           <p className="note">Use 6 or more characters with a mix of letters, numbers & symbols</p>
 
-          <button className="demo" onClick={() => this.handleDemo()}>login as a demo user</button>
+          <button className="demo" onClick={this.handleDemo}>login as a demo user</button>
 
           <div className="form-actions">
             <Link className="note2" to="login">Sign in instead</Link>
