@@ -7,8 +7,8 @@
   padding-left: 45px;
   padding-right: 10px;
   border-radius: 4px;
-  height: 50%;
-  width: 22%;
+  height: 525px;
+  width: 400px;
   font-family: roboto ,'Noto Sans Myanmar UI', arial, sans-serif;
 }
 
@@ -23,6 +23,7 @@
   height: 45px;
   width: 150px;
   opacity: 0.8;
+  margin: 0px;
 }
 
 .signup-form h4{
@@ -48,4 +49,13 @@
 .note {
   font-size: 12px;
   margin-bottom: 25px;
+}
+
+.blue-button2 {
+  text-align: center;
+  background: #1a73e8;
+  color: white;
+  border-radius: 5px;
+  width: 70px;
+  height: 40px;
 }

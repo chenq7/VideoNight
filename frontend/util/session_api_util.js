@@ -20,3 +20,10 @@ export const logout = () => (
     url: '/api/session'
   })
 );
+
+export const userValidation = valid_user => (
+  $.ajax({
+    url: 'api/valid_user',
+    data: { valid_user }
+  })
+);

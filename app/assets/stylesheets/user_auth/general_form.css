@@ -1,6 +1,7 @@
 .demo {
-  font-size: 12px;
-  color: blue;
+  font-size: 14px;
+  color: #1a73e8;
+  font-weight: 600;
   margin-bottom: 25px;
 }
 
@@ -9,11 +10,9 @@
   justify-content: space-between;
 }
 
-.login-button {
-  padding-top: 10px;
-  padding-left: 15px;
-  padding-right: 7px;
-  padding-bottom: 10px;
+.blue-button {
+  padding: 10px;
+  text-align: center;
   background: #1a73e8;
   color: white;
   border: 1px #1a73e8;  
