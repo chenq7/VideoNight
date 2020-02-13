@@ -7,13 +7,18 @@ export default (props) => {
   const display = props.currentUser ? (
     <>
       {header}
-      <button className="user-btn">{props.currentUser.username}</button>
+      <button className="user-btn">
+        <span>{props.currentUser.username[0].toUpperCase()}</span>
+      </button>
       <button className="sign-out" onClick={props.logout}>Sign Out</button>
     </>
   ) : (
   <>
     {header}
-    <Link to="/login" className="sign-in">SIGN IN</Link>
+    <Link to="/login" className="sign-in">
+      <img src={window.signin_logo} className="signin-logo" alt="" />
+      <span>SIGN IN</span>
+    </Link>
   </>
   );
 

@@ -61,13 +61,13 @@ class PasswordForm extends React.Component {
       <div className="signin-form">
         <div className="form-header">
           <img src={window.logo} className="logo" alt="VideoNight" /> <br />
-          <h4>Sign In</h4>
-          <p>to continue to VideoNight</p>
+          <h4>Hi {this.state.username}</h4>
+          <p className="form-info">enter password to continue</p>
         </div>
         <form className="signin-container" onSubmit={this.handleSubmit}>
 
           <label>
-            <input onKeyDown={this.handleEnter} type="password" placeholder="Password"
+            <input onKeyDown={this.handleEnter} type="password" placeholder="Enter your password"
               value={this.state.password} onChange={this.update('password')} />
           </label>
 
@@ -75,11 +75,11 @@ class PasswordForm extends React.Component {
             {this.props.errors.session.map(error => { return (<li key={error}>{error}</li>); })}
           </ul>
           
-          <span>Forgot Password?</span>
+          <button type="button" className="demo2">Forgot Password?</button>
 
           <div className="form-actions">
-            <button className="demo2" onClick={this.handleDemo}>log in as a demo user</button>
-            <button className="blue-button2">Next</button>
+            <button className="demo3" onClick={this.handleDemo}>log in as a demo user</button>
+            <button className="blue-button">Next</button>
           </div>
         </form>
       </div>

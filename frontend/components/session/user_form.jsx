@@ -25,10 +25,6 @@ class UserForm extends React.Component{
     this.handleEnter = this.handleEnter.bind(this);
   }
 
-  componentDidMount(){
-    this.props.clearErrors;
-  }
-
   componentWillUnmount() {
     this.props.clearErrors();
   }
@@ -74,10 +70,10 @@ class UserForm extends React.Component{
         </div>
         <form className="signin-container" onSubmit={this.handleSubmit}>
 
-          <label>
-            <input onKeyDown={this.handleEnter} type="text" placeholder="  Username"
+          <div className="input-div">
+            <input onKeyDown={this.handleEnter} type="text" placeholder="Username"
               value={this.state.valid_user} onChange={this.update('valid_user')} />
-          </label>
+          </div>
 
           <ul>
             {this.props.errors.session.map(error => { return (<li key={error}>{error}</li>); })}
@@ -85,8 +81,12 @@ class UserForm extends React.Component{
 
           <button className="demo" onClick={this.handleDemo}>log in as a demo user</button>
 
+          <p>Not your computer? Use Guest mode to sign in privately.</p>
+
+          <button className="note2" type="button">Learn more</button>
+
           <div className="form-actions">
-            <Link className="note2" to='/signup'>Create account</Link>
+            <Link className="note3" to='/signup'>Create account</Link>
             <button className="blue-button">Next</button>
           </div>
 

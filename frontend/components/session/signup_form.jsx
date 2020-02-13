@@ -11,6 +11,7 @@ class SignupForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
+    this.handleEnter = this.handleEnter.bind(this);
   }
 
   update(type) {
@@ -19,10 +20,12 @@ class SignupForm extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleDemo(e) {
     e.preventDefault();
-    // let user = { username: "demo user", password: "demopassword" };
-    // this.props.loginUser(user);
     this.props.demoLogin().then(() => this.props.history.push('/'));
   }
 
@@ -30,6 +33,13 @@ class SignupForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+  }
+
+  handleEnter(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      this.handleSubmit(e);
+    }
   }
 
   render() {
@@ -45,18 +55,18 @@ class SignupForm extends React.Component {
 
         <form onSubmit={this.handleSubmit} className="signup-container">
 
-          <input type="text" value={username} onChange={this.update('username')} placeholder="  Username" />
+          <input type="text" value={username} onKeyDown={this.handleEnter} onChange={this.update('username')} placeholder="  Username" />
           
-          <input type="text" value={email} onChange={this.update('email')} placeholder="  Email" /> 
+          <input type="text" value={email} onKeyDown={this.handleEnter} onChange={this.update('email')} placeholder="  Email" /> 
 
-          <input type="password" value={password} onChange={this.update('password')} placeholder="  Password" />
+          <input type="password" value={password} onKeyDown={this.handleEnter} onChange={this.update('password')} placeholder="  Password" />
 
           <p className="note">Use 6 or more characters with a mix of letters, numbers & symbols</p>
 
-          <button className="demo" onClick={this.handleDemo}>login as a demo user</button>
+          <button className="demo4" onClick={this.handleDemo}>login as a demo user</button>
 
           <div className="form-actions">
-            <Link className="note2" to="login">Sign in instead</Link>
+            <Link className="note3" to="login">Sign in instead</Link>
             <button className="blue-button">Sign Up</button>
           </div>
         </form>

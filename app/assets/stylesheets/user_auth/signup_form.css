@@ -59,3 +59,20 @@
   width: 70px;
   height: 40px;
 }
+
+.demo4{
+  font-size: 14px;
+  color: #1a73e8;
+  font-weight: 550;
+  letter-spacing: .25px;
+  padding: 9px 0px 3px;
+  margin-bottom: 20px;
+}
+
+.signup-container ul {
+  margin-top: 5px;
+}
+.signup-form ul li {
+  color: red;
+  padding-top: 5px;
+}
