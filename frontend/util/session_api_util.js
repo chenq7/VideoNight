@@ -21,9 +21,9 @@ export const logout = () => (
   })
 );
 
-export const userValidation = valid_user => (
+export const emailValidation = valid_email => (
   $.ajax({
-    url: 'api/valid_user',
-    data: { valid_user }
+    url: 'api/valid_email',
+    data: { valid_email }
   })
 );

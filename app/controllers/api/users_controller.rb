@@ -9,12 +9,12 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def valid_user?
-    @user = User.find_by(username: params[:valid_user][:valid_user])
+  def valid_email?
+    @user = User.find_by(email: params[:valid_email][:valid_email])
     if @user
-      render json: {valid_user: true}
+      render json: {valid_email: true, username: @user.username }
     else
-      render json: {valid_user: false}
+      render json: {valid_email: false}
     end
   end
 

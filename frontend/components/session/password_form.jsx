@@ -16,7 +16,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 class PasswordForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: this.props.location.state, password: '' }
+    this.state = { email: this.props.location.state.valid_email, 
+      username: this.props.location.state.username, password: '' }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
@@ -25,7 +26,7 @@ class PasswordForm extends React.Component {
 
   componentDidMount() {
     this.props.clearErrors();
-    if (!this.state.username) this.props.history.push('/login');
+    if (!this.state.email) this.props.history.push('/login');
   }
 
   handleDemo(e) {

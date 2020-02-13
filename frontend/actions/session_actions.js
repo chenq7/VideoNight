@@ -28,8 +28,8 @@ export const login = user => dispatch => {
   err => (dispatch(receiveErrors(err.responseJSON))))
 };
 
-export const userValidation = username => dispatch => {
-  return APIUtil.userValidation(username);
+export const emailValidation = email => dispatch => {
+  return APIUtil.emailValidation(email);
 } 
 
 export const logout = () => dispatch => {
@@ -42,7 +42,7 @@ export const signup = user => dispatch => {
 };
 
 const demoUser = {
-  username: "demo user",
+  email: "demouser@gmail.com",
   password: "demopassword"
 }
 

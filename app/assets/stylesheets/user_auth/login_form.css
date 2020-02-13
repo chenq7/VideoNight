@@ -63,6 +63,10 @@
   font-size: 16px;
 }
 
+.signin-container input:focus {
+  border: 2px solid #1a73e8;
+}
+
 .demo {
   font-size: 14px;
   color: #1a73e8;

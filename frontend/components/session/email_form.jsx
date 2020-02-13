@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { userValidation, clearErrors, receiveErrors, demoLogin } from '../../actions/session_actions';
+import { emailValidation, clearErrors, receiveErrors, demoLogin } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -8,17 +8,17 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  userValidation: username => dispatch(userValidation(username)),
+  emailValidation: email => dispatch(emailValidation(email)),
   receiveErrors: errors => dispatch(receiveErrors(errors)),
   clearErrors: () => dispatch(clearErrors()),
   demoLogin: () => dispatch(demoLogin())
 })
 
-class UserForm extends React.Component{
+class EmailForm extends React.Component{
 
   constructor(props){
     super(props);
-    this.state = { valid_user: '' };
+    this.state = { valid_email: '' };
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDemo = this.handleDemo.bind(this)
@@ -43,12 +43,13 @@ class UserForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.userValidation(this.state).then(({valid_user}) => {
-      if (valid_user){
-        this.props.history.push({ pathname: '/login2', state: this.state.valid_user })
+    this.props.emailValidation(this.state).then(({ valid_email, username }) => {
+      if (valid_email){
+        const newState = Object.assign({}, this.state, { username: username })
+        this.props.history.push({ pathname: '/login2', state: newState })
       }
       else {
-        this.props.receiveErrors( ['Username does not exist'])
+        this.props.receiveErrors( ['Email does not exist'])
       }
     });
   }
@@ -71,8 +72,8 @@ class UserForm extends React.Component{
         <form className="signin-container" onSubmit={this.handleSubmit}>
 
           <div className="input-div">
-            <input onKeyDown={this.handleEnter} type="text" placeholder="Username"
-              value={this.state.valid_user} onChange={this.update('valid_user')} />
+            <input onKeyDown={this.handleEnter} type="text" placeholder="Email"
+              value={this.state.valid_email} onChange={this.update('valid_email')} />
           </div>
 
           <ul>
@@ -97,4 +98,4 @@ class UserForm extends React.Component{
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserForm);
+export default connect(mapStateToProps, mapDispatchToProps)(EmailForm);

@@ -55,11 +55,11 @@ class SignupForm extends React.Component {
 
         <form onSubmit={this.handleSubmit} className="signup-container">
 
-          <input type="text" value={username} onKeyDown={this.handleEnter} onChange={this.update('username')} placeholder="  Username" />
+          <input type="text" value={username} onKeyDown={this.handleEnter} onChange={this.update('username')} placeholder="Username" />
           
-          <input type="text" value={email} onKeyDown={this.handleEnter} onChange={this.update('email')} placeholder="  Email" /> 
+          <input type="text" value={email} onKeyDown={this.handleEnter} onChange={this.update('email')} placeholder="Your email address" /> 
 
-          <input type="password" value={password} onKeyDown={this.handleEnter} onChange={this.update('password')} placeholder="  Password" />
+          <input type="password" value={password} onKeyDown={this.handleEnter} onChange={this.update('password')} placeholder="Password" />
 
           <p className="note">Use 6 or more characters with a mix of letters, numbers & symbols</p>
 

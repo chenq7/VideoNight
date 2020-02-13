@@ -27,9 +27,10 @@
 }
 
 .signup-form h4{
+  margin-top: 15px;
   font-size: 1.5em;
   font-weight: 510;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .signup-form > p{
@@ -39,11 +40,16 @@
 }
 
 .signup-container input {
-  width: 100%;
+  width: 92%;
   height: 30px;
+  padding: 2px 13px;
   border: 1px solid lightgray;
   border-radius: 4px;
   margin-bottom: 25px;
+}
+
+.signup-container input:focus {
+  border: 2px solid #1a73e8;
 }
 
 .note {
