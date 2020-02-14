@@ -63,7 +63,10 @@ class PasswordForm extends React.Component {
         <div className="form-header">
           <img src={window.logo} className="logo" alt="VideoNight" /> <br />
           <h4>Hi {this.state.username}</h4>
-          <p className="form-info">enter password to continue</p>
+          <div className="email-container">
+            <span className="form-info">{this.state.username[0].toUpperCase()}</span>
+            <span className="form-info2">{this.state.email}</span>
+          </div>
         </div>
         <form className="signin-container" onSubmit={this.handleSubmit}>
 
@@ -73,7 +76,10 @@ class PasswordForm extends React.Component {
           </label>
 
           <ul>
-            {this.props.errors.session.map(error => { return (<li key={error}>{error}</li>); })}
+            {this.props.errors.session.map(error => {
+              return (<li key={error} className="error-list">
+                <img src={window.error} className="error-logo" /> {error} </li>);
+            })}
           </ul>
           
           <button type="button" className="demo2">Forgot Password?</button>

@@ -13,3 +13,17 @@
   width: 70px;
   margin-top: 7px;
 }
+
+.error-logo {
+  height: 14px;
+  width: 14px;
+  margin-right: 5px;
+}
+
+.error-list {
+  color: red;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}

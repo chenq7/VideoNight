@@ -70,9 +70,14 @@ class SignupForm extends React.Component {
             <button className="blue-button">Sign Up</button>
           </div>
         </form>
+
         <ul>
-          {this.props.errors.session.map(error => { return (<li key={error}>{error}</li>); })}
+          {this.props.errors.session.map(error => {
+            return (<li key={error} className="error-list">
+              <img src={window.error} className="error-logo" /> {error} </li>);
+          })}
         </ul>
+        
       </div>
     );
   }

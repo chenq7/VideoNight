@@ -77,7 +77,8 @@ class EmailForm extends React.Component{
           </div>
 
           <ul>
-            {this.props.errors.session.map(error => { return (<li key={error}>{error}</li>); })}
+            {this.props.errors.session.map(error => { return (<li key={error} className="error-list">
+              <img src={window.error} className="error-logo" /> {error} </li>); })}
           </ul>
 
           <button className="demo" onClick={this.handleDemo}>log in as a demo user</button>

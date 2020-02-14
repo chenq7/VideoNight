@@ -130,19 +130,40 @@
   margin-top: 10px;
 }
 
-.form-info{
-  padding: 8px 0px 0px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: .1px;
-  height: 25px;
+.email-container {
+  padding: 5px 12px 5px 10px;
+  border-radius: 16px;
+  align-items: center;
+  border: 1px solid #dadce0;
+  color: #3c4043;
+  cursor: pointer;
   margin-top: 10px;
   margin-bottom: 10px;
+  display: inline-flex;
+  max-width: 100%;
 }
 
-.signin-container ul li {
-  color: red;
-  margin-top: 7px;
+.form-info{
+  height: 16px;
+  width: 16px;
+  background-color: teal;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  padding-right: 5px;
+  font-size: 12px;
+  color: white;
+  padding: 2px;
 }
+
+.form-info2{
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: .25px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+
 
