@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+icons used:
+  signin icon: http://2yamaha.com/music/User+Login+Icon.html
+  site used to make logo: https://www.brandcrowd.com/maker/tag/word
+  error icon: https://www.iconfinder.com/icons/2472270/alert_danger_error_exclamation_mark_red_icon

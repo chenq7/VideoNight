@@ -21,6 +21,12 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :videos,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Video,
+    dependent: :destroy 
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
