@@ -10,25 +10,26 @@ export const fetchVideo = videoId => (
   })
 );
 
-export const createVideo = videoForm => {
-  return $.ajax({
-    method: "POST",
-    url: '/api/videos/',
-    data: videoForm
-  });
-};
+// Work in Progress
+// export const createVideo = videoForm => {
+//   return $.ajax({
+//     method: "POST",
+//     url: '/api/videos/',
+//     data: videoForm
+//   });
+// };
 
-export const updateVideo = (videoForm, videoId) => (
-  $.ajax({
-    method: "PATCH",
-    url: `/api/videos/${videoId}`,
-    data: videoForm
-  })
-);
+// export const updateVideo = (videoForm, videoId) => (
+//   $.ajax({
+//     method: "PATCH",
+//     url: `/api/videos/${videoId}`,
+//     data: videoForm
+//   })
+// );
 
-export const deleteVideo = videoId => (
-  $.ajax({
-    method: "DELETE",
-    url: `/api/videos/${videoId}`
-  })
-);
+// export const deleteVideo = videoId => (
+//   $.ajax({
+//     method: "DELETE",
+//     url: `/api/videos/${videoId}`
+//   })
+// );

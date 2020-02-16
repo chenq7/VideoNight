@@ -1,8 +1,6 @@
 @videos.each do |video|
-  json.videos do 
-    json.set! video.id do
-      json.partial! 'video', video: video
-    end
+  json.set! video.id do
+    json.partial! 'video', video: video
   end
 
   json.users do 

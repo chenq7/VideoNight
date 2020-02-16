@@ -1,12 +1,12 @@
 class Api::VideosController < ApplicationController
 
   def index
-    @videos = Video.all.includes(:author)
+    @videos = Video.with_attached_video.all.includes(:author)
     render :index
   end
 
   def show
-    @video = Video.find(params[:id])
+    @video = Video.with_attached_video.find(params[:id])
     @video.view_count += 1
     @video.save
 
