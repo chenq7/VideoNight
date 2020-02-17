@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import VideoIndexItem from './video_index_item';
-import Header from '../header/header';
 import Sidebar from '../sidebar/sidebar';
 
 class VideoIndex extends React.Component {
@@ -18,23 +17,23 @@ class VideoIndex extends React.Component {
   render() {
     return (
       <>
-        < Header currentUser={this.props.currentUser} logout={this.props.logout}/>
 
-        < Sidebar />
-        
-        <div className="video-container">
+        <div className="main-container">
 
-          <h1>Recommended</h1>  
-        
-          <ul className="video-index">
-            {this.props.videos.slice(0,-1).map(video => {
-              return (
-                <li key={video.id}>
-                  < VideoIndexItem video={video} />
-                </li>
-              );
-            })}
-          </ul>
+          < Sidebar />
+          
+          <div className="video-container">
+            <h1>Recommended</h1>  
+            <div className="video-index">
+              {this.props.videos.slice(0,-1).map(video => {
+                return (
+                  <Link to={`/videos/${video.id}`} className="single-video" key={video.id}>
+                    < VideoIndexItem video={video} key={video.id} />
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </>
     );

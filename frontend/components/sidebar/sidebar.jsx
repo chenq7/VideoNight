@@ -11,7 +11,7 @@ class Sidebar extends React.Component {
       <div className="sidebar-container">
         <div className="sidebar-box">
           <Link to="/">
-            <img src={window.home} className="sidebar-logo" alt="" />
+            <img src={window.home} className="sidebar-logo home-logo" alt="" />
           </Link>
           <span className="home-span">Home</span>
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default (props) => {
-  
+
   const nav = <img src={window.hamburger} className="hamburger-icon" alt="" />
   const logo = <img src={window.logo} alt="VideoNight" />
   const search = <img src={window.search} className="search-icon" alt="" />
