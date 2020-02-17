@@ -35,7 +35,7 @@ icons used:
   youtube trending icon: https://iconscout.com/icon/trending-1666360
   github icon: https://www.flaticon.com/free-icon/github-logo_25231
   linkedin icon: https://www.flaticon.com/free-icon/linkedin_174857
-  user icon: https://www.kindpng.com/imgv/ixJbbmJ_computer-icons-user-clip-art-transparent-png-icon
+  user icon: https://www.iconfinder.com/icons/745386/avatar_profile_profile_avatar_user_user_avatar_user_profile_icon
 
 videos used:
     Hummingbird Video: https://www.youtube.com/watch?v=F6nZT2Rx0tE
@@ -45,7 +45,10 @@ videos used:
     Squeaking Frog: https://www.youtube.com/watch?v=HBxn56l9WcU
     Minions Fighting: https://www.youtube.com/watch?v=iRmE9de_oNc
 
+resources used:
+  https://stackoverflow.com/questions/42630473/react-toggle-class-onclick
+
 questions to ask:
   n+1 query with attachments
-  need to refresh to play video in show page
   how to implement adjustment of height of video
+  previous commit with key
