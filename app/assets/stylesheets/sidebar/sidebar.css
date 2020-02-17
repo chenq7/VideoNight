@@ -22,10 +22,18 @@
   color: #606060;
 }
 
+.sidebar-box:hover {
+  background-color: rgb(235, 235, 235);
+}
+
 .sidebar-logo{
   height: 18px;
   width: 18px;
   margin-bottom: 6px;
+}
+
+.home-logo{
+  filter: invert(29%) sepia(96%) saturate(5742%) hue-rotate(353deg) brightness(90%) contrast(122%);
 }
 
 .home-span{

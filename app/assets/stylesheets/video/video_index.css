@@ -1,0 +1,82 @@
+.main-container {
+  height: 100%;
+}
+
+.video-container {
+  height: 100%;
+  margin-left: 72px;
+  padding: 0px 20px;
+  background-color: #F9F9F9;
+  font-family: 'Roboto',sans-serif;
+}
+
+.video-container h1 {
+  height: 24px;
+  padding: 36px 0px 24px 8px;
+  width: 100%;
+  color: #0d0d0d;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.video-index {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.single-video{
+  margin: 0px 8px 40px 8px;
+  flex: 1 1 19%;
+  max-width: 400px;
+  max-height: 300px;
+  min-width: 240px;
+  min-height: 250px;
+  cursor: pointer;
+}
+
+.thumbnail-container {
+  height: 0;
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.thumbnail{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.video-info {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  min-height: 74px;
+}
+
+.user-icon {
+  height: 36px;
+  width: 50px;
+  margin-right: 12px;
+  margin-top: 12px;
+}
+
+.video-text {
+  padding-right: 24px;
+  width: 100%;
+}
+
+.video-info span {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 12px 0px 5px 0px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}

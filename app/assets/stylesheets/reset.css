@@ -18,11 +18,6 @@ ul {
   list-style: none;
 }
 
-img {
-  width: 100%;
-  height: 100%;
-}
-
 input[type="password"], input[type="email"], input[type="text"],
 input[type="submit"], textarea, button {
   -webkit-appearance: none;
@@ -36,7 +31,7 @@ button, input[type="submit"] {
 #root {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .test{
@@ -54,7 +49,7 @@ button, input[type="submit"] {
     box-shadow: 0 0 1px rgba(255,255,255,.5);
 } 
 
-html {
-  min-height: 100%;
+html, body, .app-container {
+  width: 100%;
   height: 100%;
 }
