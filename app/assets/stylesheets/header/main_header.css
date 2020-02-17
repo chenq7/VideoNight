@@ -146,21 +146,53 @@
   top: 50px;
   right: 15px;
   width: 300px;
-  border: 1px solid #9b9b9b;
-  background-color: white;
+  border: 1px solid lightgray;
+  background-color: rgba(255, 255, 255, 0.98);
+  z-index: 99;
+  font-family: 'Roboto', Arial, sans-serif;
 }
 
 .user-info {
-  height: 80px;
   padding: 16px;
+  display: flex;
 }
 
 .user-text {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 180px;
 }
 
-.sign-out{
-  padding: 5px 11px;
+.username-text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 2rem;
+  color: #0d0d0d;
 }
 
+.email-text {
+  color: blue;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0px 36px 0px 16px;
+  border-top: 1px solid lightgray;
+}
+
+.signout-icon, .github-icon, .linkedin-icon {
+  height: 24px;
+  widows: 24px;
+}
+
+.sign-out, .github-btn, .linkedin-btn {
+  font-size: 16px;
+  margin-left: 90px;
+}
+
+.user-actions:hover {
+  background-color: rgb(235, 235, 235);;
+}

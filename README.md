@@ -36,6 +36,8 @@ icons used:
   github icon: https://www.flaticon.com/free-icon/github-logo_25231
   linkedin icon: https://www.flaticon.com/free-icon/linkedin_174857
   user icon: https://www.iconfinder.com/icons/745386/avatar_profile_profile_avatar_user_user_avatar_user_profile_icon
+  signout icon: https://www.youtube.com
+  
 
 videos used:
     Hummingbird Video: https://www.youtube.com/watch?v=F6nZT2Rx0tE

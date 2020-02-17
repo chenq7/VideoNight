@@ -21,23 +21,36 @@ class Header extends React.Component {
     const addVideo = <img src={window.add_video} className="add-video-icon" alt="" />
     const { currentUser } = this.props;
 
-    const form = (
+    const form = ( currentUser ? (
       <div className="user-profile">
         <div className="user-info">
           <button className="user-btn" type="button">
             <span>{currentUser.username[0].toUpperCase()}</span>
           </button>
           <div className="user-text">
-            <span>{currentUser.username}</span>
-            <span>{currentUser.email}</span>
-          </div>
+            <span className="username-text">{currentUser.username}</span>
+            <span className="email-text">{currentUser.email}</span>
+          </div> 
         </div>
 
-        <div className="user-actions">
-          <button className="sign-out" onClick={this.props.logout}>Sign Out</button>
+        <div>
+          <div className="user-actions">
+            <img src={window.github} className="github-icon" />
+            <a href="https://github.com/chenq7">
+              <button className="github-btn">Github</button>
+            </a>
+          </div>
+          <div className="user-actions">
+            <img src={window.linkedin} className="linkedin-icon" />
+            <button className="linkedin-btn">Linkedin</button>
+          </div>
+          <div className="user-actions">
+            <img src={window.signout} className="signout-icon" />
+            <button className="sign-out" onClick={this.props.logout}>Sign Out</button>
+          </div>
         </div>
       </div>
-    );
+    ) : null );
 
     const display = currentUser ? (
       <>
@@ -78,3 +91,5 @@ class Header extends React.Component {
 }
 
 export default Header;
+
+

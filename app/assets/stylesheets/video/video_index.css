@@ -25,11 +25,11 @@
   flex-wrap: wrap;
 }
 
-.single-video{
+.single-video {
   margin: 0px 8px 40px 8px;
   flex: 1 1 19%;
-  min-width: 19%;
-  max-width: 19%;
+  min-width: 23.5%;
+  max-width: 23.5%;
   cursor: pointer;
 }
 
