@@ -134,18 +134,33 @@
   height: 16px;
 }
 
-.sign-out{
-  display: block;
-  position: absolute;
-  top: 60px;
-  right: 15px;
-  padding: 5px 11px;
-  border: 1px solid #065fd4;
-  color: #065fd4;
-}
-
 .signin-logo {
   height: 24px;
   width: 24px;
   margin-right: 0px;
 }
+
+.user-profile{
+  display: block;
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  width: 300px;
+  border: 1px solid #9b9b9b;
+  background-color: white;
+}
+
+.user-info {
+  height: 80px;
+  padding: 16px;
+}
+
+.user-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-out{
+  padding: 5px 11px;
+}
+
