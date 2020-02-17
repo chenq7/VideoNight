@@ -24,14 +24,14 @@ rain_user = User.create({username: "Rain", email: "ilovetherain@gmail.com", pass
 # Video Tables
 
 # Created by demo user
-vid1 = Video.create({title:"Nature Video", description: "Cool 3d animation of nature, enjoy!", view_count: 1310, author_id: demo_user.id })
+vid1 = Video.create({title:"3D scenes of nature", description: "Cool 3d animation of nature, enjoy!", view_count: 1310, author_id: demo_user.id })
 thumbnail1 = open('https://video-night-seeds.s3.amazonaws.com/nature.jpg')
 vid1.thumbnail.attach(io: thumbnail1, filename: "nature.jpg")
 file1 = EzDownload.open("https://video-night-seeds.s3.amazonaws.com/nature.mp4")
 vid1.video.attach(io: file1, filename: 'nature.mp4')
 vid1.save
 
-vid2 = Video.create({title:"Humming Bird Animation", description: "3d animation of a humming bird in nature. Be sure to like, comment, and subscribe!", view_count: 13499, author_id: demo_user.id })
+vid2 = Video.create({title:"Hummingbird with flowers - 30 second animation", description: "3d animation of a humming bird in nature. Be sure to like, comment, and subscribe!", view_count: 13499, author_id: demo_user.id })
 thumbnail2 = open('https://video-night-seeds.s3.amazonaws.com/humming_bird.jpg')
 vid2.thumbnail.attach(io: thumbnail2, filename: "humming_bird.jpg")
 file2 = EzDownload.open("https://video-night-seeds.s3.amazonaws.com/humming_bird.mp4")
@@ -40,8 +40,8 @@ vid2.save
 
 # Created by Rain
 vid3 = Video.create({title:"Never Give Up!", description: "Don't give up!!!", view_count: 5272838, author_id: rain_user.id })
-thumbnail3 = open('https://video-night-seeds.s3.amazonaws.com/never_give_up.jpg')
-vid3.thumbnail.attach(io: thumbnail3, filename: "never_give_up.jpg")
+thumbnail3 = open('https://video-night-seeds.s3.amazonaws.com/never_give_up.png')
+vid3.thumbnail.attach(io: thumbnail3, filename: "never_give_up.png")
 file3 = EzDownload.open("https://video-night-seeds.s3.amazonaws.com/never_give_up.mp4")
 vid3.video.attach(io: file3, filename: 'never_give_up.mp4')
 vid3.save
@@ -59,3 +59,12 @@ vid5.thumbnail.attach(io: thumbnail5, filename: "squeaking_frog.jpg")
 file5 = EzDownload.open("https://video-night-seeds.s3.amazonaws.com/squeaking_frog.mp4")
 vid5.video.attach(io: file5, filename: 'squeaking_frog.mp4')
 vid5.save
+
+# Created by meme user
+
+vid6 = Video.create({title:"Funny minions video || 30 sec minions video", description: "", view_count: 23519, author_id: meme_user.id })
+thumbnail6 = open('https://video-night-seeds.s3.amazonaws.com/minion_fighting.jpg')
+vid6.thumbnail.attach(io: thumbnail6, filename: "minion_fighting.jpg")
+file6 = EzDownload.open("https://video-night-seeds.s3.amazonaws.com/minion_fighting.mp4")
+vid6.video.attach(io: file6, filename: 'minion_fighting.mp4')
+vid6.save
