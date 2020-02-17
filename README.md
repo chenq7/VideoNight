@@ -44,3 +44,8 @@ videos used:
     Running Duck: https://www.youtube.com/watch?v=wgUczLEUWkA
     Squeaking Frog: https://www.youtube.com/watch?v=HBxn56l9WcU
     Minions Fighting: https://www.youtube.com/watch?v=iRmE9de_oNc
+
+questions to ask:
+  n+1 query with attachments
+  need to refresh to play video in show page
+  how to implement adjustment of height of video
