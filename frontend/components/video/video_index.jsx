@@ -15,6 +15,7 @@ class VideoIndex extends React.Component {
   }
 
   render() {
+    const { users, videos } = this.props;
     return (
       <>
 
@@ -25,10 +26,11 @@ class VideoIndex extends React.Component {
           <div className="video-container">
             <h1>Recommended</h1>  
             <div className="video-index">
-              {this.props.videos.slice(0,-1).map(video => {
+              {videos.slice(0,-1).map(video => {
+                
                 return (
                   <Link to={`/videos/${video.id}`} className="single-video" key={video.id}>
-                    < VideoIndexItem video={video} key={video.id} />
+                    < VideoIndexItem video={video} key={video.id} user={users[video.author_id]}/>
                   </Link>
                 );
               })}

@@ -1,45 +1,80 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default (props) => {
+class Header extends React.Component {
 
-  const nav = <img src={window.hamburger} className="hamburger-icon" alt="" />
-  const logo = <img src={window.logo} alt="VideoNight" />
-  const search = <img src={window.search} className="search-icon" alt="" />
-  const addVideo = <img src={window.add_video} className="add-video-icon" alt="" />
+  constructor(props){
+    super(props);
+    this.toggleClass = this.toggleClass.bind(this);
+    this.state = { active: false }; 
+  }
 
-  const display = props.currentUser ? (
-    <>
-      <button className="user-btn">
-        <span>{props.currentUser.username[0].toUpperCase()}</span>
-      </button>
-      <button className="sign-out" onClick={props.logout}>Sign Out</button>
-    </>
-  ) : (
-      <>
-        <Link to="/login" className="sign-in">
-          <img src={window.signin_logo} className="signin-logo" alt="" />
-          <span>SIGN IN</span>
-        </Link>
-      </>
-  );
+  toggleClass() {
+    const currentState = this.state.active;
+    this.setState({ active: !currentState });
+  };
 
-  return (
-    <header className="header1">
-      <div className="left-container">
-        {nav}
-        <Link className="logo" to="/">{logo}</Link>
-      </div>
-      <div className="center-container">
-        <div className="search-input">
-          <input type="text" placeholder="Search"/>
+  render () {
+    const nav = <img src={window.hamburger} className="hamburger-icon" alt="" />
+    const logo = <img src={window.logo} alt="VideoNight" />
+    const search = <img src={window.search} className="search-icon" alt="" />
+    const addVideo = <img src={window.add_video} className="add-video-icon" alt="" />
+    const { currentUser } = this.props;
+
+    const form = (
+      <div className="user-profile">
+        <div className="user-info">
+          <button className="user-btn" type="button">
+            <span>{currentUser.username[0].toUpperCase()}</span>
+          </button>
+          <div className="user-text">
+            <span>{currentUser.username}</span>
+            <span>{currentUser.email}</span>
+          </div>
         </div>
-        <button type="button" className="search-btn">{search}</button>
+
+        <div className="user-actions">
+          <button className="sign-out" onClick={this.props.logout}>Sign Out</button>
+        </div>
       </div>
-      <div className="right-container">
-        {addVideo}
-        {display}
-      </div>
-    </header>
-  );
+    );
+
+    const display = currentUser ? (
+      <>
+        <button className="user-btn" onClick={this.toggleClass}>
+          <span>{currentUser.username[0].toUpperCase()}</span>
+        </button>
+        {this.state.active ? form : null}
+        
+      </>
+    ) : (
+        <>
+          <Link to="/login" className="sign-in">
+            <img src={window.signin_logo} className="signin-logo" alt="" />
+            <span>SIGN IN</span>
+          </Link>
+        </>
+    );
+
+    return (
+      <header className="header1">
+        <div className="left-container">
+          {nav}
+          <Link className="logo" to="/">{logo}</Link>
+        </div>
+        <div className="center-container">
+          <div className="search-input">
+            <input type="text" placeholder="Search"/>
+          </div>
+          <button type="button" className="search-btn">{search}</button>
+        </div>
+        <div className="right-container">
+          {addVideo}
+          {display}
+        </div>
+      </header>
+    );
+    }
 }
+
+export default Header;

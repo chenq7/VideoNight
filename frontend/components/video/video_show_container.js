@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     video: state.entities.videos[videoId],
-    videos: recommended,
+    recommended: recommended,
     currentUser: state.session.id
     // users: state.entities.users,
   };

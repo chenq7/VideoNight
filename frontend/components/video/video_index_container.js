@@ -4,15 +4,15 @@ import { getAllVideos } from '../../actions/video_actions';
 import VideoIndex from './video_index';
 
 const mapStateToProps = (state, ownProps) => {
+  
   return  {
-    currentUser: state.entities.users[state.session.id],
-    videos: Object.values(state.entities.videos)
+    videos: Object.values(state.entities.videos),
+    users: state.entities.videos.users
   }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  getAllVideos: () => dispatch(getAllVideos()),
-  logout: () => dispatch(logout())
+  getAllVideos: () => dispatch(getAllVideos())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(VideoIndex);
