@@ -108,6 +108,10 @@
   margin-left: 64px;
 }
 
+.comments-container {
+  height: auto;
+}
+
 .add-comments-container {
   margin: 24px 0px 32px 0px;
 }
