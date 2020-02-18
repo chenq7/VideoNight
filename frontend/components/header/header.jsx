@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.toggleClass = this.toggleClass.bind(this);
-    this.state = { active: false }; 
+    this.state = { active: false };
   }
 
   toggleClass() {
@@ -14,14 +14,14 @@ class Header extends React.Component {
     this.setState({ active: !currentState });
   };
 
-  render () {
+  render() {
     const nav = <img src={window.hamburger} className="hamburger-icon" alt="" />
     const logo = <img src={window.logo} alt="VideoNight" />
     const search = <img src={window.search} className="search-icon" alt="" />
     const addVideo = <img src={window.add_video} className="add-video-icon" alt="" />
     const { currentUser } = this.props;
 
-    const form = ( currentUser ? (
+    const form = (currentUser ? (
       <div className="user-profile">
         <div className="user-info">
           <button className="user-btn" type="button">
@@ -30,27 +30,28 @@ class Header extends React.Component {
           <div className="user-text">
             <span className="username-text">{currentUser.username}</span>
             <span className="email-text">{currentUser.email}</span>
-          </div> 
+          </div>
         </div>
 
         <div>
-          <div className="user-actions">
-            <img src={window.github} className="github-icon" />
-            <a href="https://github.com/chenq7">
-              <button className="github-btn">Github</button>
-            </a>
-          </div>
+          <a href="https://github.com/chenq7">
+            <div className="user-actions">
+              <img src={window.github} className="github-icon" />
+              
+                <button className="github-btn">Github</button>
+            </div>
+          </a>
           <div className="user-actions">
             <img src={window.linkedin} className="linkedin-icon" />
             <button className="linkedin-btn">Linkedin</button>
           </div>
-          <div className="user-actions">
+          <div className="user-actions" onClick={this.props.logout}>
             <img src={window.signout} className="signout-icon" />
-            <button className="sign-out" onClick={this.props.logout}>Sign Out</button>
+            <button className="sign-out">Sign Out</button>
           </div>
         </div>
       </div>
-    ) : null );
+    ) : null);
 
     const display = currentUser ? (
       <>
@@ -58,7 +59,7 @@ class Header extends React.Component {
           <span>{currentUser.username[0].toUpperCase()}</span>
         </button>
         {this.state.active ? form : null}
-        
+
       </>
     ) : (
         <>
@@ -67,7 +68,7 @@ class Header extends React.Component {
             <span>SIGN IN</span>
           </Link>
         </>
-    );
+      );
 
     return (
       <header className="header1">
@@ -77,7 +78,7 @@ class Header extends React.Component {
         </div>
         <div className="center-container">
           <div className="search-input">
-            <input type="text" placeholder="Search"/>
+            <input type="text" placeholder="Search" />
           </div>
           <button type="button" className="search-btn">{search}</button>
         </div>
@@ -87,7 +88,7 @@ class Header extends React.Component {
         </div>
       </header>
     );
-    }
+  }
 }
 
 export default Header;

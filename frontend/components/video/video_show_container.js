@@ -5,11 +5,14 @@ import { getVideo, getAllVideos } from '../../actions/video_actions'
 
 const mapStateToProps = (state, ownProps) => {
   const videoId = ownProps.match.params.videoId;
+  const video = state.entities.videos[videoId];
+  const author = ( video && video.user ? video.user : null);
   const recommended = Object.assign({}, state.entities.videos);
   delete recommended[videoId];
 
   return {
-    video: state.entities.videos[videoId],
+    video: video,
+    author: author,
     recommended: recommended,
     currentUser: state.session.id
     // users: state.entities.users,
