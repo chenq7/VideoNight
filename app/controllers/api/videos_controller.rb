@@ -10,6 +10,9 @@ class Api::VideosController < ApplicationController
     @video.view_count += 1
     @video.save
 
+    @videos = Video.with_attached_thumbnail.all.includes(:author)
+    .where.not(id: params[:id]).limit(10)
+
     render :show
   end
 
