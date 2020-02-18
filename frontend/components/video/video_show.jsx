@@ -1,20 +1,50 @@
 import React from 'react';
+import RecommendedItem from './recommended_item';
 
 class VideoShow extends React.Component {
   constructor(props){
     super(props)
     this.state = {recommended: null};
+    this.getAuthor = this.getAuthor.bind(this);
   }
 
   componentDidMount(){
     this.props.getVideo(this.props.match.params.videoId);
   }
 
+  getAuthor(video){
+    if (this.props.users){
+      return this.props.users[video.author_id].username;
+      // return (user ? user.username : null);
+    }
+    else {
+      return null;
+    }
+  }
+
   render() { 
     
-    const { video, currentUser, recommended, author } = this.props;
+    const { video, currentUser, recommended, author, users } = this.props;
     const user_icon = <img src={window.user} margin-right="16px" />
     const authorName = (author ? author.username : null);
+
+    let first_recommended_video = null;
+    if (recommended){ 
+      const first_vid = recommended[0];
+      first_recommended_video = (
+      <div>
+        <div className="rec-video-container">
+          <div className="rec-video-container2">
+            <img src={first_vid.thumbnailUrl} />
+          </div>
+          <div className="rec-video-info first-video">
+            <h3>{first_vid.title}</h3>
+            <p>{this.getAuthor(first_vid)}</p>
+            <p>{first_vid.view_count} views</p>
+          </div>
+        </div>
+      </div>); 
+    }
 
     if (!video || !video.videoUrl) return null;
 
@@ -63,7 +93,13 @@ class VideoShow extends React.Component {
           </div>
 
           <div className="video-show-right">
-              <span>Up next</span>
+            <p>Up next</p>
+            {first_recommended_video}
+            <div className="recommended-videos">
+              {recommended.slice(1).map(video => {
+                return < RecommendedItem video={video} users={users}/>
+              })}
+            </div>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import React from 'react';
 const VideoIndexItem = (props) => {
   
   let {thumbnailUrl, title, view_count} = props.video;
+  const username = (props.user ? props.user.username : null);
 
   return (
     <div>
@@ -16,7 +17,7 @@ const VideoIndexItem = (props) => {
             <span className="video-title">{title}</span>
           </div>
           <div className="video-info-block">
-            <span>{props.user.username}</span>
+            <span>{username}</span>
             <span>{view_count} views</span>
           </div>
         </div>
