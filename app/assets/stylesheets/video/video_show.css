@@ -1,12 +1,15 @@
 .video-show-container{
+  height: 100%;
   background-color: #F9F9F9;
+  font-family: 'Roboto',sans-serif;
 }
 
 .video-show-container2{
-  margin: 0px 24px;
-  display: flex;
+  height: inherit;
   padding-top: 24px;
+  margin: 0px 24px;
   min-width: 1280px;
+  display: flex;
 }
 
 .video-show-left{
@@ -16,8 +19,8 @@
 }
 
 .video-box {
-  position: relative;
   display: block;
+  position: relative;
   width: 100%;
   padding-top: 56.25%;
 }
@@ -30,3 +33,96 @@
   background-color: black;
 }
 
+.video-show-info {
+  height: 8.5%;
+  min-height: 50px;
+  margin: 20px 0px 8px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-show-info h3 {
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.video-show-info2 {
+  height: 50px;
+  color: #606060;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.video-show-info-left {
+  font-size: 14px;
+}
+
+.video-show-right {
+  height: 100%;
+  min-width: 410px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+.video-show-right span {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.video-show-user-container {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.video-show-user-info {
+  height: 67px;
+  display: flex;
+  align-items: center;
+}
+
+.video-show-user-left-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.video-show-user-left-info img {
+  height: 48px;
+  widows: 48px;
+  margin-right: 16px;
+}
+
+.video-show-user-left-info span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.video-description {
+  font-size: 14px;
+  height: 89px;
+}
+
+.video-description p {
+  margin-left: 64px;
+}
+
+.add-comments-container {
+  margin: 24px 0px 32px 0px;
+}
+
+.add-comments-container span {
+  margin-bottom: 24px;
+}
+
+.comment-form {
+  display: flex;
+  align-items: center;
+}
+
+.comments-container img{
+  height: 32px;
+  width: 32px;
+  margin-right: 16px;
+}
