@@ -1,15 +1,20 @@
 .signup-form{
   position: absolute;
-  left: 35%;
-  top: 20%;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
   border: 1px solid lightgray;
-  padding-top: 45px;
-  padding-left: 45px;
-  padding-right: 10px;
+  padding: 54px 40px 36px;
   border-radius: 4px;
   height: 525px;
   width: 400px;
   font-family: roboto ,'Noto Sans Myanmar UI', arial, sans-serif;
+}
+
+.signup-main-container {
+  margin-left: 20px;
 }
 
 .signup-container{
@@ -19,21 +24,21 @@
   justify-content: center;
 }
 
-.signup-form .logo{
+.signup-main-container .logo{
   height: 45px;
   width: 150px;
   opacity: 0.8;
   margin: 0px;
 }
 
-.signup-form h4{
+.signup-main-container h4{
   margin-top: 15px;
   font-size: 1.5em;
   font-weight: 510;
   margin-bottom: 20px;
 }
 
-.signup-form > p{
+.signup-main-container > p{
   margin-bottom: 25px;
   font-size: 16px;
   font-weight: 510;
