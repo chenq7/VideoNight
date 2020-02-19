@@ -10,14 +10,17 @@ export const fetchVideo = videoId => (
   })
 );
 
+export const createVideo = videoForm => {
+  return $.ajax({
+    method: "POST",
+    url: '/api/videos/',
+    data: videoForm,
+    contentType: false,
+    processData: false
+  });
+};
+
 // Work in Progress
-// export const createVideo = videoForm => {
-//   return $.ajax({
-//     method: "POST",
-//     url: '/api/videos/',
-//     data: videoForm
-//   });
-// };
 
 // export const updateVideo = (videoForm, videoId) => (
 //   $.ajax({

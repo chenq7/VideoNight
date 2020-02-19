@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Header extends React.Component {
 
@@ -15,11 +15,14 @@ class Header extends React.Component {
   };
 
   render() {
-    const nav = <img src={window.hamburger} className="hamburger-icon" alt="" />
+
+    const { currentUser, openModal } = this.props;
+    const nav = <img src={window.hamburger} className="hamburger-icon"/>
     const logo = <img src={window.logo} alt="VideoNight" />
-    const search = <img src={window.search} className="search-icon" alt="" />
-    const addVideo = <img src={window.add_video} className="add-video-icon" alt="" />
-    const { currentUser } = this.props;
+    const search = <img src={window.search} className="search-icon"/>
+    const addVideo = <img src={window.add_video} className="add-video-icon" onClick={() => {
+      (currentUser ? openModal('postVideo') : this.props.history.push('/login'))
+    }}/>
 
     const form = (currentUser ? (
       <div className="user-profile">
@@ -91,6 +94,6 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);
 
 

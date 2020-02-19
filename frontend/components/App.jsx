@@ -1,13 +1,17 @@
 import React from "react";
 import { Route, Switch } from 'react-router-dom';
 import VideoIndex from './video/video_index_container';
-import VideoShow from '../components/video/video_show_container';
-import Header from '../components/header/header_container';
+import VideoShow from './video/video_show_container';
+import Header from './header/header_container';
+import Modal from './modal/modal';
 
 
 const App = (props) => (
   <div className="app-container">
-    <Header />
+    <Modal />
+    <header>
+      <Header />
+    </header>
     <Switch>
       <Route exact path='/' component={VideoIndex} />
       <Route exact path="/videos/:videoId" component={VideoShow} />
