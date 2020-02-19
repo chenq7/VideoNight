@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { postVideo } from '../../actions/video_actions';
+import { createVideo } from '../../actions/video_actions';
 import { clearErrors } from '../../actions/session_actions';
 import { closeModal } from '../../actions/modal_actions';
 import VideoPost from './video_post_form';
@@ -20,7 +20,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  postVideo: (video) => dispatch(postVideo(video)),
+  createVideo: (video) => dispatch(createVideo(video)),
   closeModal: () => dispatch(closeModal()),
   clearErrors: () => dispatch(clearErrors())
 })

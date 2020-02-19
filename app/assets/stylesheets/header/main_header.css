@@ -99,6 +99,7 @@
   width: 24px;
   padding: 8px;
   margin: 0px 16px 0px 0px;
+  cursor: pointer;
 }
 
 .sign-in {
@@ -181,6 +182,7 @@
   height: 50px;
   padding: 0px 36px 0px 16px;
   border-top: 1px solid lightgray;
+  cursor: pointer;
 }
 
 .signout-icon, .github-icon, .linkedin-icon {

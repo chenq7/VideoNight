@@ -20,6 +20,7 @@
   height: 605px;
   background-color: white;
   border-radius: 6px;
+  font-family: 'Roboto',sans-serif;
 }
 
 .video-form-title-container {
@@ -38,4 +39,83 @@
 .video-form-title-container img {
   height: 24px;
   width: 24px;
+}
+
+.video-form-info-container {
+  height: 500px;
+  padding: 8px 48px 24px 48px;
+}
+
+.video-form-info-header {
+  display: flex;
+  align-items: center;
+  margin: 15px 0px;
+  height: 32px;
+  font-size: 25px;
+}
+
+.video-form-info-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-form-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.video-form-info-left {
+  display: flex;
+  flex-direction: column;
+  margin-right: 12px;
+  width: 1535px;
+}
+
+.video-form-info-left textarea {
+  box-sizing: border-box;
+  border: 1px solid #DADCE0;
+  border-radius: 5px;
+  width: 100%;
+  padding: 25px 12px 12px 12px;
+  resize: none;
+  font-size: 15px;
+}
+
+.video-form-title {
+  height: 80px;
+}
+
+.video-form-description {
+  height: 150px;
+}
+
+.video-form-input {
+  margin-bottom: 20px;
+}
+
+.video-form-info-right {
+  padding: 20px;
+  width: 100%;
+}
+
+.video-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-upload-container img {
+  width: 135px;
+  height: 135px;
+  margin-bottom: 50px;
+}
+
+.video-form-submit {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }

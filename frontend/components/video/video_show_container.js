@@ -5,10 +5,10 @@ import { getVideo, getAllVideos } from '../../actions/video_actions'
 
 const mapStateToProps = (state, ownProps) => {
 
-  let video = null;
-  let author = null;
-  let users = null;
-  let recommended = null;
+  let video;
+  let author;
+  let users;
+  let recommended;
 
   if (state.entities.videos && state.entities.videos.video){
     video = (state.entities.videos.video ? state.entities.videos.video.video : null);
