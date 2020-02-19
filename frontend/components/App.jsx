@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import VideoIndex from './video/video_index_container';
 import VideoShow from '../components/video/video_show_container';
 import Header from '../components/header/header_container';
@@ -8,8 +8,10 @@ import Header from '../components/header/header_container';
 const App = (props) => (
   <div className="app-container">
     <Header />
-    <Route exact path='/' component={VideoIndex} />
-    <Route exact path="/videos/:videoId" component={VideoShow} />
+    <Switch>
+      <Route exact path='/' component={VideoIndex} />
+      <Route exact path="/videos/:videoId" component={VideoShow} />
+    </Switch>
   </div>
 );
 

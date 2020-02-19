@@ -48,36 +48,36 @@ class SignupForm extends React.Component {
 
     return (
       <div className="signup-form">
+        <div className="signup-main-container">
+          <img src={window.logo} className="logo" alt="VideoNight" /> <br/>
+          <h4>Create your VideoNight Account</h4> 
+          <p>to continue to VideoNight</p>
 
-        <img src={window.logo} className="logo" alt="VideoNight" /> <br/>
-        <h4>Create your VideoNight Account</h4> 
-        <p>to continue to VideoNight</p>
+          <form onSubmit={this.handleSubmit} className="signup-container">
 
-        <form onSubmit={this.handleSubmit} className="signup-container">
+            <input type="text" value={username} onKeyDown={this.handleEnter} onChange={this.update('username')} placeholder="Username" />
+            
+            <input type="text" value={email} onKeyDown={this.handleEnter} onChange={this.update('email')} placeholder="Your email address" /> 
 
-          <input type="text" value={username} onKeyDown={this.handleEnter} onChange={this.update('username')} placeholder="Username" />
-          
-          <input type="text" value={email} onKeyDown={this.handleEnter} onChange={this.update('email')} placeholder="Your email address" /> 
+            <input type="password" value={password} onKeyDown={this.handleEnter} onChange={this.update('password')} placeholder="Password" />
 
-          <input type="password" value={password} onKeyDown={this.handleEnter} onChange={this.update('password')} placeholder="Password" />
+            <p className="note">Use 6 or more characters with a mix of letters, numbers & symbols</p>
 
-          <p className="note">Use 6 or more characters with a mix of letters, numbers & symbols</p>
+            <button className="demo4" onClick={this.handleDemo}>login as a demo user</button>
 
-          <button className="demo4" onClick={this.handleDemo}>login as a demo user</button>
+            <div className="form-actions">
+              <Link className="note3" to="login">Sign in instead</Link>
+              <button className="blue-button">Sign Up</button>
+            </div>
+          </form>
 
-          <div className="form-actions">
-            <Link className="note3" to="login">Sign in instead</Link>
-            <button className="blue-button">Sign Up</button>
-          </div>
-        </form>
-
-        <ul>
-          {this.props.errors.session.map(error => {
-            return (<li key={error} className="error-list">
-              <img src={window.error} className="error-logo" /> {error} </li>);
-          })}
-        </ul>
-        
+          <ul>
+            {this.props.errors.session.map(error => {
+              return (<li key={error} className="error-list">
+                <img src={window.error} className="error-logo" /> {error} </li>);
+            })}
+          </ul>
+        </div>
       </div>
     );
   }
