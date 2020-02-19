@@ -1,0 +1,41 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 99;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video-form-container {
+  width: 1000px;
+  height: 605px;
+  background-color: white;
+  border-radius: 6px;
+}
+
+.video-form-title-container {
+  height: 64px;
+  padding: 0px 16px 0px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #DADCE0;
+}
+
+.video-form-title-container h2 {
+  font-size: 20px;
+}
+
+.video-form-title-container img {
+  height: 24px;
+  width: 24px;
+}
