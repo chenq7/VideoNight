@@ -20,6 +20,10 @@ class Api::VideosController < ApplicationController
     @video = Video.new(video_params)
     @video.author_id = current_user.id
     if @video.save
+      
+      @videos = Video.with_attached_thumbnail.all.includes(:author)
+      .where.not(id: params[:id]).limit(10)
+
       render :show
     else
       render json: @video.errors.full_messages, status: 422

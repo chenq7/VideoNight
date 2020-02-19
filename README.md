@@ -37,6 +37,7 @@ icons used:
   linkedin icon: https://www.flaticon.com/free-icon/linkedin_174857
   user icon: https://www.iconfinder.com/icons/745386/avatar_profile_profile_avatar_user_user_avatar_user_profile_icon
   signout icon: https://www.youtube.com
+  x icon: https://www.iconfinder.com/icons/1464321/cross_delete_hide_remove_x_icon
   
 
 videos used:
@@ -50,7 +51,10 @@ videos used:
 resources used:
   https://stackoverflow.com/questions/42630473/react-toggle-class-onclick
 
-questions to ask:
-  n+1 query with attachments
-  how to implement adjustment of height of video
-  previous commit with key
+todo list:  
+  oliver's issues
+  upload video
+  navbar on scroll and extend 
+  comments
+  likes
+  better icon
