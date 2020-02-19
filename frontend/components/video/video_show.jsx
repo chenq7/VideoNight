@@ -1,5 +1,6 @@
 import React from 'react';
 import RecommendedItem from './recommended_item';
+import { Link } from 'react-router-dom';
 
 class VideoShow extends React.Component {
   constructor(props){
@@ -12,10 +13,16 @@ class VideoShow extends React.Component {
     this.props.getVideo(this.props.match.params.videoId);
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
+      this.props.getVideo(this.props.match.params.videoId);
+      window.location.reload();
+    }
+  }
+
   getAuthor(video){
     if (this.props.users){
       return this.props.users[video.author_id].username;
-      // return (user ? user.username : null);
     }
     else {
       return null;
@@ -32,18 +39,18 @@ class VideoShow extends React.Component {
     if (recommended){ 
       const first_vid = recommended[0];
       first_recommended_video = (
-      <div>
-        <div className="rec-video-container">
-          <div className="rec-video-container2">
-            <img src={first_vid.thumbnailUrl} />
+        <Link to={`/videos/${first_vid.id}`} key={first_vid.id}>
+          <div className="rec-video-container">
+            <div className="rec-video-container2">
+              <img src={first_vid.thumbnailUrl} />
+            </div>
+            <div className="rec-video-info first-video">
+              <h3>{first_vid.title}</h3>
+              <p>{this.getAuthor(first_vid)}</p>
+              <p>{first_vid.view_count} views</p>
+            </div>
           </div>
-          <div className="rec-video-info first-video">
-            <h3>{first_vid.title}</h3>
-            <p>{this.getAuthor(first_vid)}</p>
-            <p>{first_vid.view_count} views</p>
-          </div>
-        </div>
-      </div>); 
+        </Link>); 
     }
 
     if (!video || !video.videoUrl) return null;
@@ -97,7 +104,11 @@ class VideoShow extends React.Component {
             {first_recommended_video}
             <div className="recommended-videos">
               {recommended.slice(1).map(video => {
-                return < RecommendedItem video={video} users={users}/>
+                return (
+                  <Link to={`/videos/${video.id}`} key={video.id}>
+                    < RecommendedItem video={video} users={users}/>
+                  </Link>
+                );
               })}
             </div>
           </div>

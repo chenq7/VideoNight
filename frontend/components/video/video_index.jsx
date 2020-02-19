@@ -27,7 +27,6 @@ class VideoIndex extends React.Component {
             <h1>Recommended</h1>  
             <div className="video-index">
               {videos.slice(0,-1).map(video => {
-                
                 return (
                   <Link to={`/videos/${video.id}`} className="single-video" key={video.id}>
                     < VideoIndexItem video={video} key={video.id} user={users[video.author_id]}/>
