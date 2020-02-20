@@ -1,8 +1,9 @@
 import React from 'react';
+import getDate from '../../util/date_util';
 
 const VideoIndexItem = (props) => {
   
-  let {thumbnailUrl, title, view_count} = props.video;
+  let {thumbnailUrl, title, view_count, created_at} = props.video;
   const username = (props.user ? props.user.username : null);
 
   return (
@@ -18,7 +19,11 @@ const VideoIndexItem = (props) => {
           </div>
           <div className="video-info-block">
             <span>{username}</span>
-            <span>{view_count} views</span>
+            <div>
+              <span>{view_count} views </span>
+              <span>{" \u2022 "}</span>
+              <span>{getDate(created_at)}</span>
+            </div>
           </div>
         </div>
       </div>

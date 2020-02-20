@@ -29,9 +29,13 @@
 .single-video {
   margin: 0px 8px 40px 8px;
   flex: 1 1 19%;
-  min-width: 23.5%;
-  max-width: 23.5%;
+  min-width: 240px;
+  max-width: 400px;
   cursor: pointer;
+}
+
+.hidden-video {
+  height: 0px;
 }
 
 .thumbnail-container {

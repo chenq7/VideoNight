@@ -13,7 +13,7 @@ User.destroy_all
 
 # User Tables
 
-demo_user = User.create({username: "demo user", email: "demouser@gmail.com", password: "demopassword"})
+demo_user = User.create({username: "Demo user", email: "demouser@gmail.com", password: "demopassword"})
 
 test_user = User.create({username: "test123", email: "test123@gmail.com", password: "test123"})
 

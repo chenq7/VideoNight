@@ -52,9 +52,8 @@ resources used:
   https://stackoverflow.com/questions/42630473/react-toggle-class-onclick
 
 todo list:  
-  oliver's issues
   upload video
   navbar on scroll and extend 
-  comments
   likes
+  comments
   better icon

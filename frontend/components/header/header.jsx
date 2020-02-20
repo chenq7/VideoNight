@@ -24,12 +24,30 @@ class Header extends React.Component {
       (currentUser ? openModal('postVideo') : this.props.history.push('/login'))
     }}/>
 
+    let userIcon;
+    let userIcon2;
+    if (currentUser){
+      userIcon = (currentUser.username === "demo user" ? (
+        <img src={window.user_icon} className="demo-btn" onClick={this.toggleClass}/>
+      ) : (
+          <button className="user-btn" onClick={this.toggleClass}>
+          <span>{currentUser.username[0].toUpperCase()}</span>
+        </button>
+      ));
+
+      userIcon2 = (currentUser.username === "demo user" ? (
+        <img src={window.user_icon} className="demo-btn demo-btn2" onClick={this.toggleClass} />
+      ) : (
+          <button className="user-btn user-btn2" onClick={this.toggleClass}>
+            <span>{currentUser.username[0].toUpperCase()}</span>
+          </button>
+      ));
+    }
+
     const form = (currentUser ? (
       <div className="user-profile">
         <div className="user-info">
-          <button className="user-btn" type="button">
-            <span>{currentUser.username[0].toUpperCase()}</span>
-          </button>
+          {userIcon2}
           <div className="user-text">
             <span className="username-text">{currentUser.username}</span>
             <span className="email-text">{currentUser.email}</span>
@@ -58,9 +76,7 @@ class Header extends React.Component {
 
     const display = currentUser ? (
       <>
-        <button className="user-btn" onClick={this.toggleClass}>
-          <span>{currentUser.username[0].toUpperCase()}</span>
-        </button>
+        {userIcon}
         {this.state.active ? form : null}
 
       </>

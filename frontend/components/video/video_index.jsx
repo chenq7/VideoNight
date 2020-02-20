@@ -15,6 +15,9 @@ class VideoIndex extends React.Component {
   }
 
   render() {
+
+    const hiddenVids = [1, 2, 3, 4].map(el => <div className="single-video hidden-video" key={el}></div>);
+
     const { users, videos } = this.props;
     return (
       <>
@@ -33,6 +36,7 @@ class VideoIndex extends React.Component {
                   </Link>
                 );
               })}
+              {hiddenVids}
             </div>
           </div>
         </div>
