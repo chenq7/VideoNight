@@ -38,6 +38,7 @@ icons used:
   user icon: https://www.iconfinder.com/icons/745386/avatar_profile_profile_avatar_user_user_avatar_user_profile_icon
   signout icon: https://www.youtube.com
   x icon: https://www.iconfinder.com/icons/1464321/cross_delete_hide_remove_x_icon
+  thumbnail icon: https://www.iconfinder.com/search/?q=thumbnail
   
 
 videos used:
@@ -53,7 +54,6 @@ resources used:
 
 todo list:  
   upload video
+  comments
   navbar on scroll and extend 
   likes
-  comments
-  better icon
