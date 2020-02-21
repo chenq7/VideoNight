@@ -22,17 +22,6 @@ share videos that other users can view, like, and comment on.
 
 ## Features
 
-<<<<<<< HEAD
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-=======
 * Users are able to signup, login, or logout
 * Users can use a demo login to try the site
 * Logged in users can upload videos 
->>>>>>> 4f741d694e2f484a0e490485778a608eb104a8a6
