@@ -21,11 +21,6 @@ class Api::VideosController < ApplicationController
     @video = Video.new(video_params)
     @video.author_id = current_user.id
     @video.view_count = 0;
-
-    if !@video.video.attached? || !@video.thumbnail.attached?
-      render json: @video.errors.full_messages, status: 422
-      return
-    end
     
     if @video.save
       

@@ -15,6 +15,9 @@ class Video < ApplicationRecord
 
   validates :title, :view_count, :author_id, presence: true
 
+  validate :ensure_thumbnail
+  validate :ensure_video
+
   belongs_to :author,
     primary_key: :id,
     foreign_key: :author_id,
@@ -23,4 +26,17 @@ class Video < ApplicationRecord
   has_one_attached :video
 
   has_one_attached :thumbnail
+
+  def ensure_thumbnail
+    if !self.thumbnail.attached?
+      errors[:thumbnail] << "must be attached!"
+    end
+  end
+
+  def ensure_video
+    if !self.video.attached?
+      errors[:video] << "must be attached!"
+    end
+  end
+
 end
