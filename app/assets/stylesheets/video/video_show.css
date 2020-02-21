@@ -8,9 +8,10 @@
 .video-show-container2{
   height: inherit;
   padding-top: 24px;
-  margin: 0px 24px;
+  margin: 0 auto;
   min-width: 1280px;
   display: flex;
+  max-width: 91%;
 }
 
 .video-show-left{
@@ -64,6 +65,7 @@
 .video-show-right {
   height: 100%;
   min-width: 410px;
+  max-width: 410px;
   padding-right: 24px;
   box-sizing: border-box;
 }
