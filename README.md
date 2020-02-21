@@ -8,11 +8,15 @@ share videos that other users can view, like, and comment on.
 
 ## Technologies used
 
-* Rails
-* React
-* Redux
-* Amazon Web Services (S3)
-* Heroku
+* Backend
+  * PostgreSQL
+  * Ruby on Rails
+* Frontend
+  * React
+  * Redux
+* Cloud platforms used
+  * Amazon Web Services (S3)
+  * Heroku
 
 
 ## Features
