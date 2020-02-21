@@ -30,5 +30,5 @@ export const getVideo = (videoId) => dispatch => {
 };
 
 export const createVideo = (videoForm) => dispatch => {
-  return APIUtil.createVideo(videoForm).then(video => dispatch(receiveVideo(video), errors => dispatch(receiveVideoErrors(errors))))
+  return APIUtil.createVideo(videoForm).then(video => dispatch(receiveVideo(video)), errors => dispatch(receiveVideoErrors(errors)));
 };

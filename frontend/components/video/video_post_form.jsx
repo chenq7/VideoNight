@@ -45,7 +45,7 @@ class VideoPost extends React.Component {
     this.setState({ disableSubmit: true });
    
     this.props.createVideo(formData).then((video) => {
-      debugger
+       
       this.props.closeModal();
       this.props.history.push(`/videos/${video.video.video.id}`);
     }, () => {
@@ -55,7 +55,9 @@ class VideoPost extends React.Component {
   }
 
   displayError(field) {
-    return this.props.errors.find(error => error.includes(field));
+    //  
+    const { errors } = this.props;
+    return errors.find(error => error.includes(field));
   }
 
   render() {
@@ -76,7 +78,7 @@ class VideoPost extends React.Component {
           </label>
           <div>{thumbnailPreview}</div>
         </div>
-        <span className="video-form-error">{this.displayError("thumbnail")}</span>
+        <span className="video-form-error">{this.displayError("Thumbnail")}</span>
       </div> );
 
     const uploadContainer = (
@@ -89,9 +91,9 @@ class VideoPost extends React.Component {
           <p>Your video will be public when you upload it</p>
           <input type="file" id="video-upload-input" onChange={(e) => this.handleFile(e, 'video', 'videoUrl')} multiple/>
           <div className="select-file-btn">Select File</div>
+          <span className="video-form-error">{this.displayError("Video")}</span>
+          {videoPreview}
         </label>
-        <span className="video-form-error">{this.displayError("video file")}</span>
-        {videoPreview}
       </>
     );
 
@@ -111,11 +113,13 @@ class VideoPost extends React.Component {
                 <label className="video-form-input">
                   <textarea className="video-form-title" placeholder="Add a title for your video"
                   value={this.state.title} onChange={this.update('title')} maxLength="100"></textarea>
-                  <span className="video-form-error">{this.displayError("title")}</span>
+                  <span className="title-float">Title (required)</span>
+                  <span className="video-form-error">{this.displayError("Title")}</span>
                 </label>
                 <label className="video-form-input">
                   <textarea className="video-form-description" placeholder="Add a description for your video"
                     value={this.state.description} onChange={this.update('description')} maxLength="4000"></textarea>
+                    <span className="description-float">Description (optional)</span>
                 </label>
                 {thumbnailContainer}
               </div>
@@ -123,9 +127,9 @@ class VideoPost extends React.Component {
                 {uploadContainer}
               </div>
             </div>
-            <div className="video-form-submit">
-              <button type="submit" className="upload-btn" disabled={this.state.disableSubmit}>Upload</button>
-            </div>
+            
+            <button type="submit" className="upload-btn" disabled={this.state.disableSubmit}>Upload</button>
+            
           </form>
         </div>
       </div>

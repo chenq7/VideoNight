@@ -27,7 +27,7 @@ class Header extends React.Component {
     let userIcon;
     let userIcon2;
     if (currentUser){
-      userIcon = (currentUser.username === "demo user" ? (
+      userIcon = (currentUser.username === "Demo user" ? (
         <img src={window.user_icon} className="demo-btn" onClick={this.toggleClass}/>
       ) : (
           <button className="user-btn" onClick={this.toggleClass}>
@@ -35,7 +35,7 @@ class Header extends React.Component {
         </button>
       ));
 
-      userIcon2 = (currentUser.username === "demo user" ? (
+      userIcon2 = (currentUser.username === "Demo user" ? (
         <img src={window.user_icon} className="demo-btn demo-btn2" onClick={this.toggleClass} />
       ) : (
           <button className="user-btn user-btn2" onClick={this.toggleClass}>

@@ -5,6 +5,7 @@ import { closeModal } from '../../actions/modal_actions';
 import VideoPost from './video_post_form';
 
 const mapStateToProps = (state) => {
+  //  
   return {
     video: {
       title: '',
