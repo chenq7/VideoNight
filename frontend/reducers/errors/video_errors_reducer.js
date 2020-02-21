@@ -6,7 +6,7 @@ const videoErrorsReducer = (state = [], action) => {
 
   switch (action.type) {
     case RECEIVE_VIDEO_ERRORS:
-      return action.errors;
+      return action.errors || [];
     case CLEAR_ERRORS:
       return []
     default:
