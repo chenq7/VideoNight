@@ -1,20 +1,28 @@
-# README
+# VideoNight
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Introduction
 
-Things you may want to cover:
+VideoNight is a video-sharing platform (YouTube clone) that allows users to upload and
+share videos that other users can view, like, and comment on.
 
-* Ruby version
+[Heroku Link](https://videonight.herokuapp.com/#/) 
 
-* System dependencies
+## Technologies used
 
-* Configuration
+* Backend
+  * PostgreSQL
+  * Ruby on Rails
+* Frontend
+  * React
+  * Redux
+* Cloud platforms
+  * Amazon Web Services (S3)
+  * Heroku
 
-* Database creation
 
-* Database initialization
+## Features
 
+<<<<<<< HEAD
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
@@ -23,3 +31,8 @@ Things you may want to cover:
 
 * ...
 
+=======
+* Users are able to signup, login, or logout
+* Users can use a demo login to try the site
+* Logged in users can upload videos 
+>>>>>>> 4f741d694e2f484a0e490485778a608eb104a8a6
