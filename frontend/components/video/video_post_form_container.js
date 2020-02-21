@@ -10,9 +10,9 @@ const mapStateToProps = (state) => {
       title: '',
       description: '',
       thumbnailUrl: null,
-      thumbnailFile: null,
+      thumbnail: null,
       videoUrl: null,
-      videoFile: null
+      video: null
     },
     currentUser: state.session.id,
     errors: state.errors.video

@@ -9,7 +9,7 @@ import Modal from './modal/modal';
 const App = (props) => (
   <div className="app-container">
     <Modal />
-    <header>
+    <header className="main-header">
       <Header />
     </header>
     <Switch>
