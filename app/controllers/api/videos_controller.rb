@@ -11,7 +11,7 @@ class Api::VideosController < ApplicationController
     @video.save
 
     @videos = Video.with_attached_thumbnail.all.includes(:author)
-    .where.not(id: params[:id]).limit(10)
+    .where.not(id: params[:id]).order(Arel.sql('random()')).limit(10)
 
     render :show
   end
@@ -25,7 +25,7 @@ class Api::VideosController < ApplicationController
     if @video.save
       
       @videos = Video.with_attached_thumbnail.all.includes(:author)
-      .where.not(id: params[:id]).limit(10)
+      .where.not(id: params[:id]).order(Arel.sql('random()')).limit(10)
 
       render :show
     else
