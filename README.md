@@ -5,6 +5,7 @@
 VideoNight is a video-sharing platform (YouTube clone) that allows users to upload and
 share videos that other users can view, like, and comment on.
 
+[Heroku Link](https://videonight.herokuapp.com/#/) 
 
 ## Technologies used
 
@@ -14,7 +15,7 @@ share videos that other users can view, like, and comment on.
 * Frontend
   * React
   * Redux
-* Cloud platforms used
+* Cloud platforms
   * Amazon Web Services (S3)
   * Heroku
 
