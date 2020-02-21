@@ -17,8 +17,16 @@ class Api::VideosController < ApplicationController
   end
 
   def create
+     
     @video = Video.new(video_params)
     @video.author_id = current_user.id
+    @video.view_count = 0;
+
+    if !@video.video.attached? || !@video.thumbnail.attached?
+      render json: @video.errors.full_messages, status: 422
+      return
+    end
+    
     if @video.save
       
       @videos = Video.with_attached_thumbnail.all.includes(:author)
@@ -52,7 +60,7 @@ class Api::VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:title, :description, :view_count, :author_id)
+    params.require(:video).permit(:title, :description, :thumbnail, :video)
   end
 
 end
