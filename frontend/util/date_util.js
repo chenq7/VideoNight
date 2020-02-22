@@ -6,7 +6,7 @@ export default (created_at) => {
   let months = parseInt((currDate - videoDate).toString()) / 1000 / 3600 / 24 / 30
 
   if (months > 12){
-    const years = (Math.floor(months / 12));
+    let years = (Math.floor(months / 12));
     return (years > 1 ? (years + ' years ago') : (years + ' year ago'));
   }
   else if (months >= 1){
@@ -14,7 +14,7 @@ export default (created_at) => {
     return (months > 1 ? (months + ' months ago') : (months + ' month ago'));
   } 
   else {
-    const days = months * 30;
+    let days = months * 30;
     if (days > 7) {
       const weeks = Math.floor(days / 7)
       return (weeks > 1 ? (weeks + ' weeks ago') : (weeks + ' week ago'));
