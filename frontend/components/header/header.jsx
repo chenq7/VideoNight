@@ -44,7 +44,7 @@ class Header extends React.Component {
       ));
     }
 
-    const form = (currentUser ? (
+    const form = currentUser ? (
       <div className="user-profile">
         <div className="user-info">
           {userIcon2}
@@ -55,24 +55,37 @@ class Header extends React.Component {
         </div>
 
         <div>
-          <a href="https://github.com/chenq7">
+          <a href="https://github.com/chenq7" target="_blank">
             <div className="user-actions">
               <img src={window.github} className="github-icon" />
-              
-                <button className="github-btn">Github</button>
+              <button className="github-btn">Github</button>
             </div>
           </a>
-          <div className="user-actions">
-            <img src={window.linkedin} className="linkedin-icon" />
-            <button className="linkedin-btn">Linkedin</button>
-          </div>
+          <a href="https://www.linkedin.com/in/qixiang-chen/" target="_blank">
+            <div className="user-actions">
+              <img src={window.linkedin} className="linkedin-icon" />
+              <button className="linkedin-btn">LinkedIn</button>
+            </div>
+          </a>
+          <a href="https://angel.co/qixiang-chen-1" target="_blank">
+            <div className="user-actions">
+              <img src={window.angelist} className="angelist-icon" />
+              <button className="angelist-btn">AngelList</button>
+            </div>
+          </a>
+          <a href="https://chenq7.github.io/" target="_blank">
+            <div className="user-actions">
+              <img src={window.portfolio} className="portfolio-icon" />
+              <button className="portfolio-btn">Portfolio</button>
+            </div>
+          </a>
           <div className="user-actions" onClick={this.props.logout}>
             <img src={window.signout} className="signout-icon" />
             <button className="sign-out">Sign Out</button>
           </div>
         </div>
       </div>
-    ) : null);
+    ) : null;
 
     const display = currentUser ? (
       <>

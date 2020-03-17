@@ -213,12 +213,12 @@
   cursor: pointer;
 }
 
-.signout-icon, .github-icon, .linkedin-icon {
+.signout-icon, .github-icon, .linkedin-icon, .angelist-icon, .portfolio-icon {
   height: 24px;
   widows: 24px;
 }
 
-.sign-out, .github-btn, .linkedin-btn {
+.sign-out, .github-btn, .linkedin-btn, .angelist-btn, .portfolio-btn {
   font-size: 16px;
   margin-left: 90px;
 }
