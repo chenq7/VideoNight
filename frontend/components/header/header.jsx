@@ -5,8 +5,9 @@ class Header extends React.Component {
 
   constructor(props) {
     super(props);
-    this.toggleClass = this.toggleClass.bind(this);
     this.state = { active: false };
+    this.toggleClass = this.toggleClass.bind(this);
+    this.handleSidebar = this.handleSidebar.bind(this);
   }
 
   toggleClass() {
@@ -14,10 +15,20 @@ class Header extends React.Component {
     this.setState({ active: !currentState });
   };
 
+  handleSidebar() {
+    const { sidebar, showSidebar, hideSidebar } = this.props;
+    if (sidebar.show){
+      hideSidebar();
+    }
+    else {
+      showSidebar({ show: true });
+    }
+  }
+
   render() {
 
     const { currentUser, openModal } = this.props;
-    const nav = <img src={window.hamburger} className="hamburger-icon"/>
+    const nav = <img src={window.hamburger} className="hamburger-icon" onClick={this.handleSidebar}/>
     const logo = <img src={window.logo} alt="VideoNight" />
     const search = <img src={window.search} className="search-icon"/>
     const addVideo = <img src={window.add_video} className="add-video-icon" onClick={() => {

@@ -32,10 +32,52 @@
   margin-bottom: 6px;
 }
 
+.logo-wider {
+  margin-bottom: 0px;
+  margin-right: 24px;
+}
+
+.home-box {
+  margin-top: 10px;
+  background-color: rgb(235, 235, 235);
+}
+
 .home-logo{
   filter: invert(29%) sepia(96%) saturate(5742%) hue-rotate(353deg) brightness(90%) contrast(122%);
 }
 
-.home-span{
-  color: #FC0A02;
+.home-span {
+  font-weight: 500;
+}
+
+.font-larger{
+  font-size: 14px;
+  color: black;
+}
+
+.sidebar-wider {
+  width: 240px;
+}
+
+.box-wider {
+  width: 192px;
+  height: 40px;
+  padding: 0px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.link-section-bot {
+  margin-bottom: 12px;
+}
+
+.link-section-top {
+  margin-top: 12px;
+}
+
+.div-line{
+  height: 1px;
+  width: 240px;
+  background-color: lightgray;
 }

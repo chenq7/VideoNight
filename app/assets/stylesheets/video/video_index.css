@@ -11,6 +11,10 @@
   font-family: 'Roboto',sans-serif;
 }
 
+.video-container-extend {
+  margin-left: 240px;
+}
+
 .video-container h1 {
   height: 24px;
   padding: 36px 0px 24px 8px;
