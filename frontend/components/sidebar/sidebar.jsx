@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Sidebar extends React.Component {
   constructor(props){
@@ -11,49 +11,69 @@ class Sidebar extends React.Component {
     this.props.hideSidebar();
   }
 
-  smallSideBar(){
-    return (
-      <div
-        className={`sidebar-container ${
-          this.props.sidebar.show ? "sidebar-wider" : ""
-        }`}
-      >
-        <div
-          className={`sidebar-box ${
-            this.props.sidebar.show ? "box-wider home-box" : ""
-          }`}
-        >
-          <Link to="/">
-            <img
-              src={window.home}
-              className={`sidebar-logo home-logo ${
-                this.props.sidebar.show ? "logo-wider" : ""
-              }`}
-              alt=""
-            />
+  handleHideSidebar() {
+    return e => {
+      this.setState({ hide: true });
+      setTimeout(() => {
+        this.setState({ hide: false });
+        this.props.hideSidebar();
+      }, 220);
+    };
+  }
+
+  isModalSidebar() {
+    if (this.props.location.pathname.includes("/videos")) {
+      return (
+        <div className="left-container fixed-width">
+          <img src={window.hamburger} className="hamburger-icon" onClick={this.handleSidebar} />
+          <Link className="logo" to="/">
+            <img src={window.logo} alt="VideoNight" />
           </Link>
-          <span
-            className={`${
-              this.props.sidebar.show ? "font-larger home-span" : ""
-            }`}
-          >
+        </div>
+      )
+    }
+  }
+
+  isVideoShow() {
+    if (this.props.location.pathname.includes("/videos")) {
+      return (this.state.hide ? "sidebar-transition-out" : "sidebar-transition-in");
+    }
+    return "";
+  }
+
+  sidebarModal() {
+    if (this.props.sidebar.show) {
+      return (
+        <div className="modal-background" onClick={this.handleHideSidebar()}>
+          {this.sideBar()}
+        </div>
+      )
+    }
+  }
+
+  isHighlighted(){
+    if (this.props.location.pathname.includes("/videos")) {
+      return "";
+    }
+    return "home-box";
+  }
+
+  sideBar(){
+    return (
+      <div className={`sidebar-container ${ this.props.sidebar.show ? "sidebar-wider" : ""} ${this.isVideoShow()}`}>
+        {this.isModalSidebar()}
+        <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider" : ""} ${this.isHighlighted()}`}>
+          <Link to="/">
+            <img src={window.home} className={`sidebar-logo home-logo ${this.props.sidebar.show ? "logo-wider" : ""}`}/>
+          </Link>
+          <span className={`${this.props.sidebar.show ? "font-larger home-span" : ""}`}>
             Home
           </span>
         </div>
 
-        <div
-          className={`sidebar-box ${
-            this.props.sidebar.show ? "box-wider link-section-bot" : ""
-          }`}
-        >
+        <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider link-section-bot" : ""}`}>
           <Link to="/">
-            <img
-              src={window.trending}
-              className={`sidebar-logo ${
-                this.props.sidebar.show ? "logo-wider" : ""
-              }`}
-              alt=""
-            />
+            <img src={window.trending} className={`sidebar-logo ${this.props.sidebar.show ? "logo-wider" : ""}`}/>
           </Link>
           <span className={`${this.props.sidebar.show ? "font-larger" : ""}`}>
             Trending
@@ -61,18 +81,8 @@ class Sidebar extends React.Component {
         </div>
         {this.props.sidebar.show ? <div className="div-line"></div> : null}
         <a href="https://github.com/chenq7" target="_blank">
-          <div
-            className={`sidebar-box ${
-              this.props.sidebar.show ? "box-wider link-section-top" : ""
-            }`}
-          >
-            <img
-              src={window.github}
-              className={`sidebar-logo ${
-                this.props.sidebar.show ? "logo-wider" : ""
-              }`}
-              alt=""
-            />
+          <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider link-section-top" : ""}`}>
+            <img src={window.github} className={`sidebar-logo ${this.props.sidebar.show ? "logo-wider" : ""}`}/>
             <span className={`${this.props.sidebar.show ? "font-larger" : ""}`}>
               Github
             </span>
@@ -80,18 +90,8 @@ class Sidebar extends React.Component {
         </a>
 
         <a href="https://www.linkedin.com/in/qixiang-chen/" target="_blank">
-          <div
-            className={`sidebar-box ${
-              this.props.sidebar.show ? "box-wider" : ""
-            }`}
-          >
-            <img
-              src={window.linkedin}
-              className={`sidebar-logo ${
-                this.props.sidebar.show ? "logo-wider" : ""
-              }`}
-              alt=""
-            />
+          <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider" : ""}`}>
+            <img src={window.linkedin} className={`sidebar-logo ${this.props.sidebar.show ? "logo-wider" : ""}`}/>
             <span className={`${this.props.sidebar.show ? "font-larger" : ""}`}>
               Linkedin
             </span>
@@ -99,18 +99,8 @@ class Sidebar extends React.Component {
         </a>
 
         <a href="https://angel.co/qixiang-chen-1" target="_blank">
-          <div
-            className={`sidebar-box ${
-              this.props.sidebar.show ? "box-wider" : ""
-            }`}
-          >
-            <img
-              src={window.angelist}
-              className={`sidebar-logo ${
-                this.props.sidebar.show ? "logo-wider" : ""
-              }`}
-              alt=""
-            />
+          <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider" : ""}`}>
+            <img src={window.angelist} className={`sidebar-logo ${this.props.sidebar.show ? "logo-wider" : ""}`}/>
             <span className={`${this.props.sidebar.show ? "font-larger" : ""}`}>
               AngelList
             </span>
@@ -118,18 +108,8 @@ class Sidebar extends React.Component {
         </a>
 
         <a href="https://chenq7.github.io/" target="_blank">
-          <div
-            className={`sidebar-box ${
-              this.props.sidebar.show ? "box-wider link-section-bot" : ""
-            }`}
-          >
-            <img
-              src={window.portfolio}
-              className={`sidebar-logo ${
-                this.props.sidebar.show ? "logo-wider" : ""
-              }`}
-              alt=""
-            />
+          <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider link-section-bot" : ""}`}>
+            <img src={window.portfolio} className={`sidebar-logo ${this.props.sidebar.show ? "logo-wider" : ""}`}/>
             <span className={`${this.props.sidebar.show ? "font-larger" : ""}`}>
               Portfolio
             </span>
@@ -143,10 +123,10 @@ class Sidebar extends React.Component {
   render() {
     return ( 
       <>
-        { this.smallSideBar() }
+        {this.isVideoShow() ? this.sidebarModal() : this.sideBar()}
       </>
     );
   }
 }
 
-export default Sidebar;
+export default withRouter(Sidebar);
