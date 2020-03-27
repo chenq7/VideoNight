@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import VideoIndexItem from './video_index_item';
-import Sidebar from '../sidebar/sidebar_container';
 
 class VideoIndex extends React.Component {
 
@@ -23,8 +22,6 @@ class VideoIndex extends React.Component {
       <>
 
         <div className="main-container">
-
-          < Sidebar />
           
           <div className={`video-container ${this.props.sidebar.show ? "video-container-extend" : ""}`}>
             <h1>Recommended</h1>  

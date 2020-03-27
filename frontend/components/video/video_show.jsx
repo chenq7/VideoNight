@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import RecommendedItem from './recommended_item';
-import Sidebar from '../sidebar/sidebar_container';
 
 class VideoShow extends React.Component {
   constructor(props){
@@ -58,7 +57,6 @@ class VideoShow extends React.Component {
 
     return (
       <div className="video-show-container">
-        <Sidebar/>
         <div className="video-show-container2">
           <div className="video-show-left">
             <div className="video-box">

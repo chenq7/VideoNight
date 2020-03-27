@@ -7,6 +7,7 @@
   width: 72px;
   z-index: 2;
   background-color: white;
+  margin-top: 56px;
 }
 
 .sidebar-box {
@@ -63,6 +64,7 @@
   width: 192px;
   height: 40px;
   padding: 0px 24px;
+  margin-top: 12px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -83,10 +85,12 @@
 }
 
 .sidebar-transition-out {
+  margin-top: 0px;
   animation: slideInLeft 0.2s linear both;
 }
 
 .sidebar-transition-in {
+  margin-top: 0px;
   animation: slideInRight 0.2s ease both;
 }
 

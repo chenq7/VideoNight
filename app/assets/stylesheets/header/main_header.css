@@ -218,11 +218,15 @@
   widows: 24px;
 }
 
-.sign-out, .github-btn, .linkedin-btn, .angelist-btn, .portfolio-btn {
+.dropdown-btn {
   font-size: 16px;
-  margin-left: 90px;
+  margin-left: 65px;
 }
 
 .user-actions:hover {
   background-color: rgb(235, 235, 235);;
+}
+
+.profile-btn {
+  width: 300px;
 }

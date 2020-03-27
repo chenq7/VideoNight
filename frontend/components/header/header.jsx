@@ -8,6 +8,7 @@ class Header extends React.Component {
     this.state = { active: false };
     this.toggleClass = this.toggleClass.bind(this);
     this.handleSidebar = this.handleSidebar.bind(this);
+    this.handleUserProfile = this.handleUserProfile.bind(this);
   }
 
   toggleClass() {
@@ -23,6 +24,11 @@ class Header extends React.Component {
     else {
       showSidebar({ show: true });
     }
+  }
+
+  handleUserProfile() {
+    this.toggleClass()
+    this.props.history.push("/userProfile");
   }
 
   render() {
@@ -66,33 +72,40 @@ class Header extends React.Component {
         </div>
 
         <div>
+          <button className="profile-btn" onClick={() => this.handleUserProfile()}>
+            <div className="user-actions">
+              <img src={window.user} className="github-icon" />
+              <span className="dropdown-btn">Your Profile</span>
+            </div>
+          </button>
+
           <a href="https://github.com/chenq7" target="_blank">
             <div className="user-actions">
               <img src={window.github} className="github-icon" />
-              <button className="github-btn">Github</button>
+              <span className="dropdown-btn">Github</span>
             </div>
           </a>
           <a href="https://www.linkedin.com/in/qixiang-chen/" target="_blank">
             <div className="user-actions">
               <img src={window.linkedin} className="linkedin-icon" />
-              <button className="linkedin-btn">LinkedIn</button>
+              <span className="dropdown-btn">LinkedIn</span>
             </div>
           </a>
           <a href="https://angel.co/qixiang-chen-1" target="_blank">
             <div className="user-actions">
               <img src={window.angelist} className="angelist-icon" />
-              <button className="angelist-btn">AngelList</button>
+              <span className="dropdown-btn">AngelList</span>
             </div>
           </a>
           <a href="https://chenq7.github.io/" target="_blank">
             <div className="user-actions">
               <img src={window.portfolio} className="portfolio-icon" />
-              <button className="portfolio-btn">Portfolio</button>
+              <span className="dropdown-btn">Portfolio</span>
             </div>
           </a>
           <div className="user-actions" onClick={this.props.logout}>
             <img src={window.signout} className="signout-icon" />
-            <button className="sign-out">Sign Out</button>
+            <span className="dropdown-btn">Sign Out</span>
           </div>
         </div>
       </div>

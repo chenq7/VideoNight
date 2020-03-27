@@ -62,23 +62,24 @@ class Sidebar extends React.Component {
     return (
       <div className={`sidebar-container ${ this.props.sidebar.show ? "sidebar-wider" : ""} ${this.isVideoShow()}`}>
         {this.isModalSidebar()}
-        <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider" : ""} ${this.isHighlighted()}`}>
-          <Link to="/">
-            <img src={window.home} className={`sidebar-logo home-logo ${this.props.sidebar.show ? "logo-wider" : ""}`}/>
-          </Link>
-          <span className={`${this.props.sidebar.show ? "font-larger home-span" : ""}`}>
-            Home
-          </span>
-        </div>
+        <Link to="/">
+          <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider" : ""} ${this.isHighlighted()}`}>
+              <img src={window.home} className={`sidebar-logo home-logo ${this.props.sidebar.show ? "logo-wider" : ""}`}/>
+            <span className={`${this.props.sidebar.show ? "font-larger home-span" : ""}`}>
+              Home
+            </span>
+          </div>
+        </Link>
 
-        <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider link-section-bot" : ""}`}>
-          <Link to="/">
-            <img src={window.trending} className={`sidebar-logo ${this.props.sidebar.show ? "logo-wider" : ""}`}/>
-          </Link>
-          <span className={`${this.props.sidebar.show ? "font-larger" : ""}`}>
-            Trending
-          </span>
-        </div>
+        <Link to="/">
+          <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider link-section-bot" : ""}`}>
+              <img src={window.trending} className={`sidebar-logo ${this.props.sidebar.show ? "logo-wider" : ""}`}/>
+            <span className={`${this.props.sidebar.show ? "font-larger" : ""}`}>
+              Trending
+            </span>
+          </div>
+        </Link>
+        
         {this.props.sidebar.show ? <div className="div-line"></div> : null}
         <a href="https://github.com/chenq7" target="_blank">
           <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider link-section-top" : ""}`}>
