@@ -2,8 +2,71 @@
 .profile-container {
   height: 100%;
   margin-left: 72px;
-  padding: 0px 20px;
   background-color: #F9F9F9;
   font-family: 'Roboto', sans-serif;
 }
 
+.profile-background-container {
+  height: 25%;
+  width: 100%;
+}
+
+.user-profile-container {
+  height: 150px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.profile-user-btn {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin-left: 107px;
+  margin-right: 24px;
+}
+
+.user-profile-name {
+  font-size: 24px;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.user-profile-upload-container {
+  margin-left: 40px;
+  margin-top: 50px;
+}
+
+.user-profile-title {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 2rem;
+  max-height: 2rem;
+  margin-left: 20px;
+}
+
+.video-profile-index {
+  margin-top: 20px;
+}
+
+.single-video-container {
+  margin: 0px 8px 40px 8px;
+  flex: 1 1 19%;
+  min-width: 240px;
+  max-width: 400px;
+}
+
+.edit-video-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.edit-video-btn, .delete-video-btn {
+  display: block;
+  width: 120px;
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding: 7px;
+  border-radius: 7px;
+}

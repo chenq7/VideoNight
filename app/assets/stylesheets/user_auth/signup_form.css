@@ -47,14 +47,14 @@
 .signup-container input {
   width: 92%;
   height: 30px;
-  padding: 2px 13px;
+  padding: 4px 13px;
   border: 1px solid lightgray;
   border-radius: 4px;
   margin-bottom: 25px;
 }
 
 .signup-container input:focus {
-  border: 2px solid #1a73e8;
+  box-shadow:0px 0px 0px 2px #1a73e8 inset;
 }
 
 .note {

@@ -61,7 +61,7 @@ class SignupForm extends React.Component {
 
             <input type="password" value={password} onKeyDown={this.handleEnter} onChange={this.update('password')} placeholder="Password" />
 
-            <p className="note">Use 6 or more characters with a mix of letters, numbers & symbols</p>
+            <p className="note">Use a minimum of 6 characters for your password</p>
 
             <button className="demo4" onClick={this.handleDemo}>login as a demo user</button>
 

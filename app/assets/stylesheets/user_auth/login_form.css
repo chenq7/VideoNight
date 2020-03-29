@@ -51,6 +51,7 @@
 
 .input-div{
   padding: 8px 0px 0px;
+  margin: 5px 0px;
 }
 
 .signin-container input {
@@ -59,12 +60,12 @@
   border: 1px solid #dadce0;
   border-radius: 4px;
   margin: 1px 1px 0px;
-  padding: 13px 15px;
+  padding: 12px 15px;
   font-size: 16px;
 }
 
 .signin-container input:focus {
-  border: 2px solid #1a73e8;
+  box-shadow:0px 0px 0px 2px #1a73e8 inset;
 }
 
 .demo {
