@@ -7,7 +7,7 @@
 }
 
 .profile-background-container {
-  height: 25%;
+  height: 250px;
   width: 100%;
 }
 
@@ -61,12 +61,21 @@
   justify-content: space-around;
 }
 
-.edit-video-btn, .delete-video-btn {
-  display: block;
-  width: 120px;
-  background-color: blue;
+.edit-video-btn {
+  background-color: #2175f3;
   color: white;
+  height: 2.5em;
+  line-height: 2.5em;
+  letter-spacing: 0.125em;
+  padding: 0 2em;
+  font-size: 0.8em;
+  font-weight: 400;
+  text-indent: 0.125em;
+  text-transform: uppercase;
   text-align: center;
-  padding: 7px;
-  border-radius: 7px;
+  border-radius: 4px;
+}
+
+.edit-video-btn:hover {
+  color: black;
 }

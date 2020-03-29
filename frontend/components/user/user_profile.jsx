@@ -49,8 +49,8 @@ class UserProfile extends React.Component {
                     < VideoIndexItem video={video} key={video.id} user={currentUser.username} />
                   </Link>
                   <div className="edit-video-div">
-                    <button className="edit-video-btn">Edit Video</button>
-                    <button className="delete-video-btn">Delete Video</button>
+                    <button className="edit-video-btn">Edit</button>
+                    <button className="edit-video-btn">Delete</button>
                   </div>
                 </div>
               );
