@@ -26,6 +26,12 @@
   margin-right: 24px;
 }
 
+.profile-user-btn-style {
+  background-color: #4ad3da;
+  text-align: center;
+  font-size: 25px;
+}
+
 .user-profile-name {
   font-size: 24px;
   font-family: 'Roboto', Arial, sans-serif;

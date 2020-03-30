@@ -30,10 +30,10 @@ class UserProfile extends React.Component {
 
   render() {
     let {currentUser, videos} = this.props;
-    let userIcon = (currentUser.username === "Demo user" ? (
+    let userIcon = (currentUser && currentUser.username === "Demo user" ? (
       <img src={window.user_icon} className="profile-user-btn" />
     ) : (
-        <button className="profile-user-btn">
+        <button className="profile-user-btn profile-user-btn-style">
           <span>{currentUser.username[0].toUpperCase()}</span>
         </button>
     ));

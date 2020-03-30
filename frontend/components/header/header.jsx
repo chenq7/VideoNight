@@ -9,6 +9,7 @@ class Header extends React.Component {
     this.toggleClass = this.toggleClass.bind(this);
     this.handleSidebar = this.handleSidebar.bind(this);
     this.handleUserProfile = this.handleUserProfile.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   toggleClass() {
@@ -23,6 +24,16 @@ class Header extends React.Component {
     }
     else {
       showSidebar({ show: true });
+    }
+  }
+
+  handleLogout() {
+    if (this.props.location.pathname.includes("/userProfile")){
+      this.props.history.push("/");
+      this.props.logout();
+    }
+    else {
+      this.props.logout();
     }
   }
 
@@ -103,7 +114,7 @@ class Header extends React.Component {
               <span className="dropdown-btn">Portfolio</span>
             </div>
           </a>
-          <div className="user-actions" onClick={this.props.logout}>
+          <div className="user-actions" onClick={this.handleLogout}>
             <img src={window.signout} className="signout-icon" />
             <span className="dropdown-btn">Sign Out</span>
           </div>
