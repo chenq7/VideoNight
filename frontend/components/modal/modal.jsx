@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import VideoPostForm from '../video/video_post_form_container';
+import VideoEditForm from '../video/video_edit_form';
 
 class Modal extends React.Component {
 
@@ -18,12 +19,14 @@ class Modal extends React.Component {
 
     const { modal, currentUser } = this.props;
     if (!modal || !currentUser) return null;
-  
     let component;
-    switch (modal) {
+    switch (modal.type) {
       case 'postVideo':
         component = <VideoPostForm />;
         break;
+      case 'editVideo':
+        component = <VideoEditForm />;
+        break
       default:
         component = null;
         break;

@@ -21,19 +21,20 @@ export const createVideo = videoForm => {
   });
 };
 
-// Work in Progress
+export const updateVideo = (videoForm, videoId) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/videos/${videoId}`,
+    data: videoForm,
+    contentType: false,
+    processData: false
+  })
+};
 
-// export const updateVideo = (videoForm, videoId) => (
-//   $.ajax({
-//     method: "PATCH",
-//     url: `/api/videos/${videoId}`,
-//     data: videoForm
-//   })
-// );
-
-// export const deleteVideo = videoId => (
-//   $.ajax({
-//     method: "DELETE",
-//     url: `/api/videos/${videoId}`
-//   })
-// );
+export const deleteVideo = videoId => {
+    
+  return $.ajax({
+    method: "DELETE",
+    url: `/api/videos/${videoId}`
+  })
+};

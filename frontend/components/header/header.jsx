@@ -38,7 +38,7 @@ class Header extends React.Component {
     const logo = <img src={window.logo} alt="VideoNight" />
     const search = <img src={window.search} className="search-icon"/>
     const addVideo = <img src={window.add_video} className="add-video-icon" onClick={() => {
-      (currentUser ? openModal('postVideo') : this.props.history.push('/login'))
+      (currentUser ? openModal({type: 'postVideo'}) : this.props.history.push('/login'))
     }}/>
 
     let userIcon;

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { getAllVideos } from '../../actions/video_actions';
+import { getAllVideos, deleteVideo } from '../../actions/video_actions';
+import { openModal } from '../../actions/modal_actions';
 import UserProfile from './user_profile';
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,7 +12,9 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  getAllVideos: () => dispatch(getAllVideos())
+  getAllVideos: () => dispatch(getAllVideos()),
+  deleteVideo: (videoId) => dispatch(deleteVideo(videoId)),
+  openModal: (type) => dispatch(openModal(type)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

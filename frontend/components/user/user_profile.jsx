@@ -6,10 +6,26 @@ class UserProfile extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   componentDidMount() {
     this.props.getAllVideos();
+  }
+
+  handleDelete(e, videoId) {
+      
+    e.preventDefault();
+    let that = this;
+    this.props.deleteVideo(videoId).then(() => {
+      that.props.history.push('/userProfile');
+    });
+  }
+
+  handleEdit(e, video) {
+    e.preventDefault();
+    this.props.openModal({type: 'editVideo', currentVideo: video});
   }
 
   render() {
@@ -49,8 +65,8 @@ class UserProfile extends React.Component {
                     < VideoIndexItem video={video} key={video.id} user={currentUser.username} />
                   </Link>
                   <div className="edit-video-div">
-                    <button className="edit-video-btn">Edit</button>
-                    <button className="edit-video-btn">Delete</button>
+                    <button className="edit-video-btn" onClick={(e) => this.handleEdit(e, video)}>Edit</button>
+                    <button className="edit-video-btn" onClick={(e) => this.handleDelete(e, video.id)}>Delete</button>
                   </div>
                 </div>
               );
