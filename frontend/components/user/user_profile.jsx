@@ -29,7 +29,7 @@ class UserProfile extends React.Component {
   }
 
   render() {
-    let {currentUser, videos} = this.props;
+    let {currentUser, videos, openModal} = this.props;
     let userIcon = (currentUser && currentUser.username === "Demo user" ? (
       <img src={window.user_icon} className="profile-user-btn" />
     ) : (
@@ -54,6 +54,7 @@ class UserProfile extends React.Component {
         <div className="user-profile-container">
             {userIcon}
             <span className="user-profile-name">{currentUser.username}</span>
+            <button className="edit-video-btn video-upload-margin" onClick={() => openModal({ type: 'postVideo' })}>Upload Video</button>
         </div>
         <div className="user-profile-upload-container">
           <span className="user-profile-title">Uploads</span>

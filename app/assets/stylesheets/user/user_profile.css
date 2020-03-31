@@ -42,6 +42,10 @@
   margin-top: 50px;
 }
 
+.video-upload-margin {
+  margin-left: 50%;
+}
+
 .user-profile-title {
   font-family: 'Roboto', Arial, sans-serif;
   font-size: 1.2rem;
