@@ -53,9 +53,9 @@ class Sidebar extends React.Component {
 
   isHighlighted(){
     if (this.props.location.pathname === ("/")) {
-      return "home-box";
+      return "home-box home-box-color";
     }
-    return "";
+    return "home-box";
   }
 
   sideBar(){
