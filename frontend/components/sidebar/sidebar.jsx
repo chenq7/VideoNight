@@ -52,10 +52,10 @@ class Sidebar extends React.Component {
   }
 
   isHighlighted(){
-    if (this.props.location.pathname.includes("/videos")) {
-      return "";
+    if (this.props.location.pathname === ("/")) {
+      return "home-box";
     }
-    return "home-box";
+    return "";
   }
 
   sideBar(){
