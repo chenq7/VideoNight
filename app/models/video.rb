@@ -23,8 +23,17 @@ class Video < ApplicationRecord
     foreign_key: :author_id,
     class_name: :User
 
-  has_one_attached :video
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :video_id,
+    class_name: :Comment,
+    dependent: :destroy
 
+  has_many :likes, 
+    as: :likeable,
+    dependent: :destroy
+
+  has_one_attached :video
   has_one_attached :thumbnail
 
   def ensure_thumbnail
@@ -39,4 +48,7 @@ class Video < ApplicationRecord
     end
   end
 
+  def self.search_by_title(input_field)
+    Video.where("title LIKE :search", search: "%#{input_field}%").to_a
+  end
 end

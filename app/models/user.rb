@@ -27,6 +27,18 @@ class User < ApplicationRecord
     class_name: :Video,
     dependent: :destroy 
 
+  has_many :likes,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Like,
+    dependent: :destroy
+
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Comment,
+    dependent: :destroy
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
