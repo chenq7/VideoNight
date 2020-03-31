@@ -31,7 +31,7 @@ class VideoShow extends React.Component {
 
   render() { 
     
-    const { video, currentUser, recommended, author, users } = this.props;
+    const { video, recommended, author, users } = this.props;
     const user_icon = <img src={window.user} margin-right="16px" />
     const authorName = (author ? author.username : null);
 
@@ -60,11 +60,9 @@ class VideoShow extends React.Component {
         <div className="video-show-container2">
           <div className="video-show-left">
             <div className="video-box">
-              
               <video className="video" controls autoPlay >
                 <source src={video.videoUrl} type="video/mp4" />
               </video>
-
             </div>
 
             <div className="video-show-info">
@@ -79,7 +77,7 @@ class VideoShow extends React.Component {
             <div className="video-show-user-container">
               <div className="video-show-user-info">
                 <div className="video-show-user-left-info">
-                  <img src={window.user}/>
+                  <img src={window.user} />
                   <span>{authorName}</span>
                 </div>
               </div>
@@ -106,7 +104,7 @@ class VideoShow extends React.Component {
               {recommended.slice(1).map(video => {
                 return (
                   <Link to={`/videos/${video.id}`} key={video.id}>
-                    < RecommendedItem video={video} users={users}/>
+                    <RecommendedItem video={video} users={users} />
                   </Link>
                 );
               })}
