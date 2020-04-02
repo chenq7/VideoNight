@@ -16,8 +16,7 @@ class Api::VideosController < ApplicationController
     render :show
   end
 
-  def create
-     
+  def create 
     @video = Video.new(video_params)
     @video.author_id = current_user.id
     @video.view_count = 0;
@@ -33,6 +32,18 @@ class Api::VideosController < ApplicationController
     end
   end
 
+  def create_like 
+    @like = Like.new(like_params)
+    @like.user_id = current_user.id
+    if @like.save
+      @video = Video.find(@like.likeable_id)
+      @num_likes = @video.num_likes
+      render :show_like
+    else
+      render json: @like.errors.full_messages, status: 422
+    end
+  end
+
   def update
     @video = current_user.videos.find(params[:id])
     if @video.update(video_params)
@@ -40,6 +51,11 @@ class Api::VideosController < ApplicationController
     else
       render json: @video.errors.full_messages, status: 422
     end
+  end
+
+  def search
+    @videos = Video.search_by_title(params[:result])
+    render :index
   end
 
   def destroy
@@ -52,10 +68,23 @@ class Api::VideosController < ApplicationController
     end
   end
 
+  def destroy_like
+    @like = Like.find_by(user_id: current_user.id, likeable_id: params[:video_id], likeable_type: "Video")
+    @video = Video.find(params[:video_id])
+    @like.destroy
+    @num_likes = @video.num_likes
+    @like = nil
+    render :show_like
+  end
+
   private
 
   def video_params
     params.require(:video).permit(:title, :description, :thumbnail, :video)
+  end
+
+  def like_params
+    params.require(:like).permit(:is_liked, :likeable_id, :likeable_type)
   end
 
 end

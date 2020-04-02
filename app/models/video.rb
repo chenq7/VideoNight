@@ -51,4 +51,11 @@ class Video < ApplicationRecord
   def self.search_by_title(input_field)
     Video.where("title LIKE :search", search: "%#{input_field}%").to_a
   end
+
+  def num_likes
+    counts = self.likes.group(:is_liked).count
+    counts[true] = 0 if !counts[true]
+    counts[false] = 0 if !counts[false]
+    counts
+  end
 end

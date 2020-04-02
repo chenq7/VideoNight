@@ -8,12 +8,22 @@ Rails.application.routes.draw do
 
     resource :session, only: [:create, :destroy, :show]
 
-    resources :videos, only: [:index, :show, :create, :update, :destroy]
+    resources :videos, only: [:index, :show, :create, :update, :destroy] do
+      post :create_like
+      delete :destroy_like
+      resources :comments, only: [:index, :create]
+    end
+
+    resources :comments, only: [:update, :destroy] do
+      post :create_like
+      delete :destroy_like
+    end
+
+    get :search, controller: 'videos'
     
   end
 
   root "static_pages#root"
-
 end
 
 
