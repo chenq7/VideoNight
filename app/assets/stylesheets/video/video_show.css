@@ -169,3 +169,35 @@
   padding-top: 16px;
 }
 
+.video-show-info-right {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #909090;
+}
+
+.like-icon {
+  width: 23px;
+  height: 23px;
+  padding: 8px;
+  filter: invert(61%) sepia(0%) saturate(4231%) hue-rotate(90deg) brightness(92%) contrast(84%);
+}
+
+.rotated {
+  transform:rotate(180deg);
+  -webkit-transform:rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+}
+
+.show-blue-container {
+  border-bottom: 2px solid #065FD4;
+}
+
+.show-blue-image {
+  filter: invert(25%) sepia(85%) saturate(6061%) hue-rotate(202deg) brightness(94%) contrast(92%);
+}
+
+.show-blue {
+  color: #065FD4;
+}

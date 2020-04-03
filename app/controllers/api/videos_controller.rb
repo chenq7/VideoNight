@@ -13,6 +13,10 @@ class Api::VideosController < ApplicationController
     @videos = Video.with_attached_thumbnail.all.includes(:author)
     .where.not(id: params[:id]).order(Arel.sql('random()')).limit(10)
 
+    @num_likes = @video.num_likes
+    if logged_in?
+      @like = @video.likes.where(user_id: current_user.id).first
+    end
     render :show
   end
 

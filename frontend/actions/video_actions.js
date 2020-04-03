@@ -10,9 +10,9 @@ const receiveAllVideos = (videos) => ({
   videos
 });
 
-const receiveVideo = (video) => ({
+const receiveVideo = (data) => ({
   type: RECEIVE_VIDEO,
-  video
+  data
 });
 
 const removeVideo = videoId => ({
