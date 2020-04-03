@@ -39,9 +39,8 @@ class UserProfile extends React.Component {
     ));
     
     const hiddenVids = [1, 2, 3, 4].map(el => <div className="single-video hidden-video" key={el}></div>);
-
-    let userVideos = []
-    for (let i = 0; i < videos.length; i++) {
+    let userVideos = [];
+    for (let i = 0; i < videos.length - 1; i++) {
       if (videos[i].author_id === currentUser.id) {
         userVideos.push(videos[i])
       }

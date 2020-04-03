@@ -4,25 +4,17 @@ import { getVideo, getAllVideos } from '../../actions/video_actions'
 import { createVideoLike, deleteVideoLike } from '../../actions/like_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
-  let video = null;
-  let author = null;
-  let users = null;
-  let recommended = null;
-
-  if (state.entities.videos && state.entities.videos.video){
-    video = state.entities.videos.video.video;
-    author = state.entities.videos.video.user;
-    users = state.entities.videos.video.users;
-    recommended = Object.values(state.entities.videos.video.videos);
-  }
+  debugger
+  let video = state.entities.videos[ownProps.match.params.videoId];
+  let recommended = state.entities.videos.recommended ? Object.values(state.entities.videos.recommended) : [];
+  let author = video && state.entities.users[video.author_id] ? state.entities.users[video.author_id].username : "";
 
   return {
+    currentUser: state.entities.users[state.session.id],
     video: video,
     author: author,
     recommended: recommended,
-    currentUser: state.session.id,
-    users: users
+    users: state.entities.users
   };
 };
 
