@@ -62,9 +62,8 @@ class VideoEdit extends React.Component {
 
     this.setState({ disableSubmit: true });
 
-    this.props.updateVideo(formData, this.state.id).then((video) => {
+    this.props.updateVideo(formData, this.state.id).then(() => {
       this.props.closeModal();
-      window.location.reload();
     }, () => {
       this.setState({ disableSubmit: false });
     });

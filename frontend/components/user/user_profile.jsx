@@ -14,13 +14,9 @@ class UserProfile extends React.Component {
     this.props.getAllVideos();
   }
 
-  handleDelete(e, videoId) {
-      
+  handleDelete(e, videoId) {      
     e.preventDefault();
-    let that = this;
-    this.props.deleteVideo(videoId).then(() => {
-      that.props.history.push('/userProfile');
-    });
+    this.props.deleteVideo(videoId);
   }
 
   handleEdit(e, video) {

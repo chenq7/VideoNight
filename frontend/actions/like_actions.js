@@ -15,10 +15,10 @@ export const deleteVideoLike = videoId => dispatch => {
   return APIUtil.deleteVideoLike(videoId).then(result => dispatch(receiveLike(result)));
 };
 
-// export const createCommentLike = like => dispatch => {
-//   return APIUtil.createCommentLike(like).then(result => dispatch(receiveLike(result)));
-// };
+export const createCommentLike = like => dispatch => {
+  return APIUtil.createCommentLike(like).then(result => dispatch(receiveLike(result)));
+};
 
-// export const deleteCommentLike = commentId => dispatch => {
-//   return APIUtil.deleteCommentLike(commentId).then(result => dispatch(receiveLike(result)));
-// };
+export const deleteCommentLike = commentId => dispatch => {
+  return APIUtil.deleteCommentLike(commentId).then(result => dispatch(receiveLike(result)));
+};

@@ -1,17 +1,16 @@
 export const fetchAllVideos = () => {
-  $.ajax({
+  return $.ajax({
     url: "/api/videos"
   })
 };
 
 export const fetchVideo = videoId => {
-  $.ajax({
+  return $.ajax({
     url: `/api/videos/${videoId}`
   })
 };
 
 export const createVideo = videoForm => {
-   
   return $.ajax({
     method: "POST",
     url: '/api/videos/',
@@ -32,7 +31,6 @@ export const updateVideo = (videoForm, videoId) => {
 };
 
 export const deleteVideo = videoId => {
-    
   return $.ajax({
     method: "DELETE",
     url: `/api/videos/${videoId}`
