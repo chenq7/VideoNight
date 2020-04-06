@@ -15,18 +15,18 @@ export const deleteVideoLike = videoId => {
   })
 };
 
-// export const createCommentLike = like => {
-//   return $.ajax({
-//     method: "POST",
-//     url: `/api/comments/${like.likeable_id}/create_like`,
-//     data: { like }
-//   })
-// };
+export const createCommentLike = like => {
+  return $.ajax({
+    method: "POST",
+    url: `/api/comments/${like.likeable_id}/create_like`,
+    data: { like }
+  })
+};
 
-// export const deleteCommentLike = commentId => {
-//   return $.ajax({
-//     method: "DELETE",
-//     url: `/api/comments/${commentId}/destroy_like`,
-//     data: { commentId }
-//   })
-// };
+export const deleteCommentLike = commentId => {
+  return $.ajax({
+    method: "DELETE",
+    url: `/api/comments/${commentId}/destroy_like`,
+    data: { commentId }
+  })
+};
