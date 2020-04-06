@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import VideoIndexItem from './video_index_item';
 
 class VideoIndex extends React.Component {
@@ -28,9 +27,7 @@ class VideoIndex extends React.Component {
             <div className="video-index">
               {videos.slice(0,-1).map(video => {
                 return (
-                  <Link to={`/videos/${video.id}`} className="single-video" key={video.id}>
-                    < VideoIndexItem video={video} key={video.id} user={users[video.author_id]}/>
-                  </Link>
+                  <VideoIndexItem video={video} key={video.id} user={users[video.author_id]}/>
                 );
               })}
               {hiddenVids}

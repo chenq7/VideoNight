@@ -35,15 +35,8 @@ class CommentIndex extends React.Component {
     </main>);
 
     const comments = comments.map((comment) => (
-      <CommentIndexItem
-        key={comment.id}
-        comment={comment}
-        user={users[comment.user_id]}
-        createCommentLike={createCommentLike}
-        deleteCommentLike={deleteCommentLike}
-        currentUser={currUser}
-        removeComment={removeComment}
-      />));
+      <CommentIndexItem key={comment.id} comment={comment} user={users[comment.user_id]} createCommentLike={createCommentLike} 
+        deleteCommentLike={deleteCommentLike} currentUser={currUser} removeComment={removeComment} />));
 
     return (
       <div className="video-comments-container">

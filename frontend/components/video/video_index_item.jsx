@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import getDate from '../../util/date_util';
 
 const VideoIndexItem = (props) => {
@@ -7,7 +8,7 @@ const VideoIndexItem = (props) => {
   const username = (props.user ? props.user.username : null);
 
   return (
-    <div>
+    <Link to={`/videos/${props.video.id}`} className="single-video">
       <div className="thumbnail-container">
         <img src={thumbnailUrl} className="thumbnail"/>
       </div>
@@ -27,7 +28,7 @@ const VideoIndexItem = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
