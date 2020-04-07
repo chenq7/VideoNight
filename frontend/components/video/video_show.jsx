@@ -105,12 +105,12 @@ class VideoShow extends React.Component {
                   <span>{this.toDate(video.created_at)}</span>
                 </div>
                 <div className={`video-show-info-right ${video.like ? "show-blue-container" : "" }`}>
-                  <img src={window.like} className={`like-icon ${video.like && video.like.is_liked ? "show-blue-image" : ""}`} 
+                  <img src={window.like} className={`pointer like-icon ${video.like && video.like.is_liked ? "show-blue-image" : ""}`} 
                   onClick={(e) => this.handleLike(e, true)}/>
-                  <span className={video.like && video.like.is_liked ? "show-blue-image" : ""}>{video.like ? video.num_likes.true : 0}</span>
-                  <img src={window.like} className={`like-icon rotated ${video.like && !video.like.is_liked ? "show-blue-image" : ""}`} 
+                  <span className={`pointer ${video.like && video.like.is_liked ? "show-blue-image" : ""}`}>{video.num_likes ? video.num_likes.true : 0}</span>
+                  <img src={window.like} className={`pointer like-icon rotated ${video.like && !video.like.is_liked ? "show-blue-image" : ""}`} 
                   onClick={(e) => this.handleLike(e, false)}/>
-                  <span className={video.like && !video.like.is_liked ? "show-blue" : ""}>{video.like ? video.num_likes.false : 0}</span>
+                  <span className={`pointer ${video.like && !video.like.is_liked ? "show-blue" : ""}`}>{video.num_likes ? video.num_likes.false : 0}</span>
                 </div>
               </div>
             </div>
