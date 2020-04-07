@@ -20,13 +20,13 @@ class CommentIndex extends React.Component {
   }
 
   render() {
-    const { video, comments, users, createCommentLike, deleteCommentLike, currentUser, removeComment } = this.props;
-    const currentUser = currentUser ? users[currentUser] : null;
+    let { video, comments, users, createCommentLike, deleteCommentLike, removeComment } = this.props;
+    const currentUser = this.props.currentUser ? users[this.props.currentUser] : null;
 
     const commentForm = (
     <main className="create-comment-container">
       <header className="comment-form-header">
-        {video.comment_count} Comment{video.comment_count > 1 ? "s" : null}
+        {video.num_comments} Comment{video.num_comments > 1 ? "s" : null}
       </header>
 
       <CreateCommentContainer
@@ -34,14 +34,14 @@ class CommentIndex extends React.Component {
       />
     </main>);
 
-    const comments = comments.map((comment) => (
+    const allComments = comments.map((comment) => (
       <CommentIndexItem key={comment.id} comment={comment} user={users[comment.user_id]} createCommentLike={createCommentLike} 
-        deleteCommentLike={deleteCommentLike} currentUser={currUser} removeComment={removeComment} />));
+        deleteCommentLike={deleteCommentLike} currentUser={currentUser} removeComment={removeComment} />));
 
     return (
       <div className="video-comments-container">
         {commentForm}
-        {comments}
+        {allComments}
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import RecommendedItem from './recommended_item';
+import CommentIndex from '../comment/comment_index_container';
 
 class VideoShow extends React.Component {
   constructor(props){
@@ -55,10 +56,15 @@ class VideoShow extends React.Component {
     }
   }
 
+  toDate(createdAt) {
+    const date = new Date(createdAt);
+    const dateStr = date.toDateString();
+    return dateStr.slice(dateStr.indexOf(" ") + 1);
+  };
+
   render() { 
     const { video, recommended, author, users } = this.props;
     if (!video || !video.videoUrl) return null;
-    const user_icon = <img src={window.user} margin-right="16px" />
     const authorName = (author ? author.username : null);
     let first_recommended_video = null;
     if (recommended){ 
@@ -95,6 +101,8 @@ class VideoShow extends React.Component {
               <div className="video-show-info2">
                 <div className="video-show-info-left">
                   <span>{video.view_count} views</span>
+                  <span>{" \u2022 "}</span>
+                  <span>{this.toDate(video.created_at)}</span>
                 </div>
                 <div className={`video-show-info-right ${video.like ? "show-blue-container" : "" }`}>
                   <img src={window.like} className={`like-icon ${video.like && video.like.is_liked ? "show-blue-image" : ""}`} 
@@ -110,7 +118,7 @@ class VideoShow extends React.Component {
             <div className="video-show-user-container">
               <div className="video-show-user-info">
                 <div className="video-show-user-left-info">
-                  <img src={window.user} />
+                  <img src={authorName === "Demo user" ? window.user_icon : window.user} />
                   <span>{authorName}</span>
                 </div>
               </div>
@@ -119,15 +127,7 @@ class VideoShow extends React.Component {
               </div>
             </div>
 
-            <div className="comments-container">
-              <div className="add-comments-container">
-                <span>0 Comments</span>
-              </div>
-              <div className="comment-form">
-                {user_icon}
-                <span>Add a public comment...</span>
-              </div>
-            </div>
+            <CommentIndex video={video} />
           </div>
 
           <div className="video-show-right">

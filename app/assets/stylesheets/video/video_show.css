@@ -93,7 +93,8 @@
 
 .video-show-user-left-info img {
   height: 48px;
-  widows: 48px;
+  width: 48px;
+  border-radius: 50%;
   margin-right: 16px;
 }
 

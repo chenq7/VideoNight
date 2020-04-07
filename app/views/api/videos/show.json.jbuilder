@@ -13,6 +13,10 @@ json.video do
   end
 end
 
+json.user do 
+  json.partial! "api/users/user", user: @video.author
+end
+
 if @videos
   json.videos do 
     @videos.each do |video|

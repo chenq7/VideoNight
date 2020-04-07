@@ -10,11 +10,14 @@ require 'open-uri'
 
 Video.destroy_all
 User.destroy_all
+Like.destroy_all
+Comment.destroy_all
 
 # User Tables
 
 demo_user = User.create({username: "Demo user", email: "demouser@gmail.com", password: "demopassword"})
 test_user = User.create({username: "test123", email: "test123@gmail.com", password: "test123"})
+test_user2 = User.create({username: "test321", email: "test321@gmail.com", password: "test321"})
 meme_user = User.create({username: "I love Memes", email: "meme69and420@gmail.com", password: "memeislife"})
 rain_user = User.create({username: "Rain", email: "ilovetherain@gmail.com", password: "peaceandquiet"})
 
@@ -24,6 +27,7 @@ universal = User.create({username: "Universal Pictures", email: "universal@gmail
 disney = User.create({username: "Walt Disney Studios", email: "disney@gmail.com", password: "temppassword"})
 pokemon_fan = User.create({username: "Pokemon Fan", email: "pokemonfan@gmail.com", password: "temppassword"})
 nayan = User.create({username: "Nayan", email: "nayan@gmail.com", password: "temppassword"})
+not_a_troll = User.create({username: "Not a Troll", email: "notatroll@gmail.com", password: "temppassword"})
 
 udacity = User.create({username: "Udacity", email: "udacity@gmail.com", password: "temppassword"})
 
@@ -162,3 +166,88 @@ vid18.thumbnail.attach(io: thumbnail18, filename: "minion_fighting.jpg")
 file18 = EzDownload.open("https://video-night-seeds.s3.amazonaws.com/minion_fighting.mp4")
 vid18.video.attach(io: file18, filename: 'minion_fighting.mp4')
 vid18.save
+
+
+# Video Like seeds
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Video", likeable_id: 1})
+Like.create({is_liked: true, user_id: 3, likeable_type: "Video", likeable_id: 1})
+Like.create({is_liked: true, user_id: 4, likeable_type: "Video", likeable_id: 1})
+Like.create({is_liked: true, user_id: 5, likeable_type: "Video", likeable_id: 1})
+Like.create({is_liked: true, user_id: 6, likeable_type: "Video", likeable_id: 1})
+Like.create({is_liked: false, user_id: 12, likeable_type: "Video", likeable_id: 1})
+
+Like.create({is_liked: true, user_id: 2, likeable_type: "Video", likeable_id: 2})
+Like.create({is_liked: true, user_id: 3, likeable_type: "Video", likeable_id: 2})
+Like.create({is_liked: true, user_id: 4, likeable_type: "Video", likeable_id: 2})
+Like.create({is_liked: true, user_id: 5, likeable_type: "Video", likeable_id: 2})
+Like.create({is_liked: false, user_id: 12, likeable_type: "Video", likeable_id: 2})
+
+Like.create({is_liked: true, user_id: 2, likeable_type: "Video", likeable_id: 3})
+Like.create({is_liked: true, user_id: 3, likeable_type: "Video", likeable_id: 3})
+Like.create({is_liked: true, user_id: 4, likeable_type: "Video", likeable_id: 3})
+Like.create({is_liked: true, user_id: 5, likeable_type: "Video", likeable_id: 3})
+Like.create({is_liked: false, user_id: 7, likeable_type: "Video", likeable_id: 3})
+Like.create({is_liked: false, user_id: 11, likeable_type: "Video", likeable_id: 3})
+Like.create({is_liked: false, user_id: 12, likeable_type: "Video", likeable_id: 3})
+
+Like.create({is_liked: true, user_id: 2, likeable_type: "Video", likeable_id: 4})
+Like.create({is_liked: true, user_id: 3, likeable_type: "Video", likeable_id: 4})
+Like.create({is_liked: true, user_id: 4, likeable_type: "Video", likeable_id: 4})
+Like.create({is_liked: true, user_id: 5, likeable_type: "Video", likeable_id: 4})
+
+Like.create({is_liked: true, user_id: 2, likeable_type: "Video", likeable_id: 5})
+Like.create({is_liked: true, user_id: 3, likeable_type: "Video", likeable_id: 5})
+Like.create({is_liked: true, user_id: 4, likeable_type: "Video", likeable_id: 5})
+Like.create({is_liked: false, user_id: 5, likeable_type: "Video", likeable_id: 5})
+
+Like.create({is_liked: true, user_id: 2, likeable_type: "Video", likeable_id: 6})
+Like.create({is_liked: true, user_id: 3, likeable_type: "Video", likeable_id: 6})
+Like.create({is_liked: true, user_id: 4, likeable_type: "Video", likeable_id: 6})
+Like.create({is_liked: true, user_id: 5, likeable_type: "Video", likeable_id: 6})
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Video", likeable_id: 7})
+Like.create({is_liked: true, user_id: 2, likeable_type: "Video", likeable_id: 7})
+Like.create({is_liked: true, user_id: 3, likeable_type: "Video", likeable_id: 7})
+Like.create({is_liked: true, user_id: 4, likeable_type: "Video", likeable_id: 7})
+Like.create({is_liked: true, user_id: 5, likeable_type: "Video", likeable_id: 7})
+Like.create({is_liked: true, user_id: 6, likeable_type: "Video", likeable_id: 7})
+Like.create({is_liked: false, user_id: 11, likeable_type: "Video", likeable_id: 7})
+Like.create({is_liked: false, user_id: 12, likeable_type: "Video", likeable_id: 7})
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Video", likeable_id: 8})
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Video", likeable_id: 10})
+Like.create({is_liked: true, user_id: 2, likeable_type: "Video", likeable_id: 10})
+Like.create({is_liked: true, user_id: 3, likeable_type: "Video", likeable_id: 10})
+Like.create({is_liked: true, user_id: 4, likeable_type: "Video", likeable_id: 10})
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Video", likeable_id: 11})
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Video", likeable_id: 12})
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Video", likeable_id: 13})
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Video", likeable_id: 14})
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Video", likeable_id: 15})
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Video", likeable_id: 16})
+Like.create({is_liked: true, user_id: 2, likeable_type: "Video", likeable_id: 16})
+Like.create({is_liked: false, user_id: 12, likeable_type: "Video", likeable_id: 16})
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Video", likeable_id: 17})
+Like.create({is_liked: true, user_id: 2, likeable_type: "Video", likeable_id: 17})
+Like.create({is_liked: false, user_id: 12, likeable_type: "Video", likeable_id: 17})
+
+
+Like.create({is_liked: true, user_id: 2, likeable_type: "Video", likeable_id: 18})
+Like.create({is_liked: false, user_id: 7, likeable_type: "Video", likeable_id: 18})
+Like.create({is_liked: false, user_id: 12, likeable_type: "Video", likeable_id: 18})
+
+
+# Comment seeds
+
+
+
+# Comment Like seeds

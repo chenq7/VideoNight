@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import EditCommentContainer from './edit_comment_form_container';
+import EditCommentContainer from './edit_comment_container';
 import getDate from '../../util/date_util';
 
 class CommentIndexItem extends React.Component {
@@ -62,47 +62,45 @@ class CommentIndexItem extends React.Component {
 
   render() {
     const { comment, currentUser, user } = this.props;
-    const num_likes = comment.like_counts.true;
-    const num_dislikes = comment.like_counts.false;
+    const num_likes = comment.num_likes.true;
+    const num_dislikes = comment.num_likes.false;
 
     const commentButtons = (currentUser && currentUser.id === comment.user_id ? (
-      <>
-        <span className="comment-edit-buttons" onClick={() => this.setState({ showEditForm: true })}>Edit</span>
-        <span className="comment-edit-buttons" onClick={this.handleDelete}>Delete</span>
-      </>
+      <div>
+        <button className="comment-edit-buttons" onClick={() => this.setState({ showEditForm: true })}>Edit</button>
+        <button className="comment-edit-buttons" onClick={this.handleDelete}>Delete</button>
+      </div>
     ) : null);
+
+    const is_demo = user && user.username === "Demo user";
 
     return (
       <div className="comment-item-container">
-        <img src={window.user} className="comments-user-profile" />
+        <img src={is_demo ? window.user_icon : window.user} className="comments-user-profile" />
         {!this.state.showEditForm ? (
           <>
             <div className="comment-item-info">
-              <div className="comment-item-user-info">
-                <span className={(currentUser && currentUser.id === id ? "comment-item-currentuser" : "")}>{user.username}</span>
-                <span>{getDate(comment.created_at)}</span>
+              <div className="comment-item-info-header">
+                <div className="comment-item-user-info">
+                  <span className={(currentUser && currentUser.id === user.id ? "current-user-comment" : "comment-item-username")}>{user.username}</span>
+                  <span className="comment-item-date">{getDate(comment.created_at)}</span>
+                </div>
+                {commentButtons}
               </div>
               <div className="comment-item-body">
                 <p>{comment.body}</p>
               </div>
               <div className="comment-item-likes-container">
-                <div
-                  className={`pointer ${this.checkLike(true, "like")}`}
-                  onClick={(e) => this.handleLike(e, true)}
-                >
-                  <img src={window.likesIcon} />
+                <div className={`likes-container-div pointer ${this.checkLike(true, "like")}`} onClick={(e) => this.handleLike(e, true)}>
+                  <img src={window.like} className={`like-icon2 ${comment.like && comment.like.is_liked ? "show-blue-image" : ""}`} />
                   <span>{num_likes ? num_likes : 0}</span>
                 </div>
-                <div
-                  className={`pointer ${this.checkLike(false, "like")}`}
-                  onClick={(e) => this.handleLike(e, false)}
-                >
-                  <img src={window.dislikesIcon} />
+                <div className={`likes-container-div pointer ${this.checkLike(false, "like")}`} onClick={(e) => this.handleLike(e, false)}>
+                  <img src={window.like} className={`like-icon2 rotated ${comment.like && !comment.like.is_liked ? "show-blue-image" : ""}`}  />
                   <span>{num_dislikes ? num_dislikes : 0}</span>
                 </div>
               </div>
             </div>
-            {commentButtons}
           </>
         ) : (
           <EditCommentContainer comment={comment} toggleEditForm={this.toggleEditForm}/>

@@ -23,15 +23,15 @@ const videosReducer = (state = {}, action) => {
     case RECEIVE_ALL_COMMENTS:
       if (!action.data.video) return state;
       newState = Object.assign({}, state);
-      newState[action.data.video.id] = merge({}, newState[action.data.video.id], action.data.video);
+      newState[action.data.video.id] = Object.assign({}, newState[action.data.video.id], action.data.video);
       return newState;
     case RECEIVE_COMMENT:
       newState = Object.assign({}, state);
-      newState[action.data.video.id] = merge({}, newState[action.data.video.id], action.data.video);
+      newState[action.data.video.id] = Object.assign({}, newState[action.data.video.id], action.data.video);
       return newState;
     case DELETE_COMMENT:
       newState = Object.assign({}, state);
-      newState[action.data.video.id] = merge({}, newState[action.data.video.id], action.data.video);
+      newState[action.data.video.id] = Object.assign({}, newState[action.data.video.id], action.data.video);
       return newState;
     default:
       return state;

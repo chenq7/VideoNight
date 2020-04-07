@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2020_03_31_052023) do
     t.text "body", null: false
     t.integer "user_id", null: false
     t.integer "video_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_comments_on_user_id"
     t.index ["video_id"], name: "index_comments_on_video_id"
   end
@@ -49,6 +51,8 @@ ActiveRecord::Schema.define(version: 2020_03_31_052023) do
     t.integer "user_id", null: false
     t.string "likeable_type"
     t.bigint "likeable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["is_liked"], name: "index_likes_on_is_liked"
     t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id"
     t.index ["user_id"], name: "index_likes_on_user_id"

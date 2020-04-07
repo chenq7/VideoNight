@@ -12,7 +12,7 @@ const usersReducer = (state = {}, action) => {
       newState = Object.assign({}, state, action.videos.users);
       return newState;
     case RECEIVE_VIDEO:
-      newState = Object.assign({}, state, action.data.users);
+      newState = Object.assign({}, state, action.data.users, { user: action.data.user });
       return newState;
     case RECEIVE_ALL_COMMENTS:
       return Object.assign({}, state, action.data.users);

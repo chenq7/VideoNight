@@ -1,0 +1,75 @@
+.pointer {
+  cursor: pointer;
+}
+
+.comment-item-container {
+  display: flex;
+}
+
+.comment-item-info {
+  width: 100%;
+}
+
+.comment-item-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.comment-item-username {
+  font-weight: 500;
+  font-size: 14px;
+  color: black;
+  padding-right: 6px;
+  line-height: 18px;
+  margin-right: 6px;
+}
+
+.comment-form-content {
+  width: 100%;
+}
+
+.current-user-comment {
+    font-size: 14px;
+    background-color: #888888;
+    border-radius: 10px;
+    color: white;
+    margin-right: 6px;
+    padding: 3px 6px;
+}
+
+.comment-item-date {
+    color: #606060;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.comment-edit-buttons {
+  color: white;
+  padding: 5px 8px;
+  background-color: #1A73E8;
+  border-radius: 2px;
+  font-size: 12px;
+  margin: 0px 10px;
+  text-transform: uppercase;
+}
+
+.comment-item-likes-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.likes-container-div {
+  display: flex;
+  align-items: center;
+}
+
+.like-icon2 {
+  width: 17px;
+  height: 17px;
+  padding: 8px 5px;
+  filter: invert(61%) sepia(0%) saturate(4231%) hue-rotate(90deg) brightness(92%) contrast(84%);
+}
+
