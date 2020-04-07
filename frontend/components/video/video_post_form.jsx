@@ -47,7 +47,7 @@ class VideoPost extends React.Component {
     this.props.createVideo(formData).then((video) => {
        
       this.props.closeModal();
-      this.props.history.push(`/videos/${video.video.video.id}`);
+      this.props.history.push(`/videos/${video.data.video.id}`);
     }, () => {
       this.setState({ disableSubmit: false });
     });

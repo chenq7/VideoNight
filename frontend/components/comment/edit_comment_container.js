@@ -6,7 +6,6 @@ import { updateComment, deleteComment } from '../../actions/comment_actions';
 class EditCommentForm extends React.Component {
   render() {
     const { comment, currentUser, errors, handleComment, deleteComment, clearErrors, toggleEditForm } = this.props;
-    debugger
     if (!comment || !currentUser || comment.user_id !== currentUser.id) return null;
 
     return (

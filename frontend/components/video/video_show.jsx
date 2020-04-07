@@ -107,10 +107,10 @@ class VideoShow extends React.Component {
                 <div className={`video-show-info-right ${video.like ? "show-blue-container" : "" }`}>
                   <img src={window.like} className={`like-icon ${video.like && video.like.is_liked ? "show-blue-image" : ""}`} 
                   onClick={(e) => this.handleLike(e, true)}/>
-                  <span className={video.like && video.like.is_liked ? "show-blue-image" : ""}>{video.num_likes.true}</span>
+                  <span className={video.like && video.like.is_liked ? "show-blue-image" : ""}>{video.like ? video.num_likes.true : 0}</span>
                   <img src={window.like} className={`like-icon rotated ${video.like && !video.like.is_liked ? "show-blue-image" : ""}`} 
                   onClick={(e) => this.handleLike(e, false)}/>
-                  <span className={video.like && !video.like.is_liked ? "show-blue" : ""}>{video.num_likes.false}</span>
+                  <span className={video.like && !video.like.is_liked ? "show-blue" : ""}>{video.like ? video.num_likes.false : 0}</span>
                 </div>
               </div>
             </div>

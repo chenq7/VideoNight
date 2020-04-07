@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 class CommentForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.state = this.props.comment;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.isLoggedIn = this.isLoggedIn.bind(this);
