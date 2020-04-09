@@ -5,9 +5,9 @@ export const RECEIVE_VIDEO = 'RECEIVE_VIDEO';
 export const DELETE_VIDEO = "DELETE_VIDEO";
 export const RECEIVE_VIDEO_ERRORS = "RECEIVE_VIDEO_ERRORS";
 
-const receiveAllVideos = (videos) => ({
+const receiveAllVideos = (data) => ({
   type: RECEIVE_ALL_VIDEOS,
-  videos
+  data
 });
 
 const receiveVideo = (data) => ({

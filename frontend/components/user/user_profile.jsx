@@ -44,7 +44,7 @@ class UserProfile extends React.Component {
     
     return (
     <div className="main-container">
-        <div className={`profile-container ${this.props.sidebar.show ? " video-container-extend" : ""}`}>
+        <div className={`profile-container ${this.props.sidebar.show ? "video-container-extend" : ""}`}>
         <img src={window.profile_background} className="profile-background-container"/>
         <div className="user-profile-container">
             {userIcon}

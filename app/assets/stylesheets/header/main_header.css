@@ -43,10 +43,15 @@
 
 .center-container {
   margin: 0px 40px;
-  width: 100%;
+  width: 40%;
   height: 32px;
   display: flex;
   justify-content: center;
+}
+
+.search-input-form {
+  width: 100%;
+  display: flex;
 }
 
 .search-input {

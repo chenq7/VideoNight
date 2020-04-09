@@ -9,7 +9,7 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
     case RECEIVE_ALL_VIDEOS:
-      newState = Object.assign({}, state, action.videos.users);
+      newState = Object.assign({}, state, action.data.users);
       return newState;
     case RECEIVE_VIDEO:
       newState = Object.assign({}, state, action.data.users, { user: action.data.user });

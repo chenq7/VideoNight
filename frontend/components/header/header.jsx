@@ -5,11 +5,12 @@ class Header extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { active: false };
+    this.state = { active: false, search: '' };
     this.toggleClass = this.toggleClass.bind(this);
     this.handleSidebar = this.handleSidebar.bind(this);
     this.handleUserProfile = this.handleUserProfile.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   toggleClass() {
@@ -28,7 +29,7 @@ class Header extends React.Component {
   }
 
   handleLogout() {
-    if (this.props.location.pathname.includes("/userProfile")){
+    if (this.props.location.pathname.includes("/user")){
       this.props.history.push("/");
       this.props.logout();
     }
@@ -37,9 +38,22 @@ class Header extends React.Component {
     }
   }
 
-  handleUserProfile() {
+  handleUserProfile(currentUser) {
     this.toggleClass()
-    this.props.history.push("/userProfile");
+    this.props.history.push(`/user/${currentUser.id}`);
+  }
+
+  update(result){
+    return e => {
+      this.setState({ [result]: e.currentTarget.value });
+    };
+  }
+
+  handleSearch(e){
+    e.preventDefault();
+    const result = this.state.search.split(" ").join("+");
+    this.props.history.push(`/results?search_query=${result}`);
+    window.location.reload();
   }
 
   render() {
@@ -83,7 +97,7 @@ class Header extends React.Component {
         </div>
 
         <div>
-          <button className="profile-btn" onClick={() => this.handleUserProfile()}>
+          <button className="profile-btn" onClick={() => this.handleUserProfile(currentUser)}>
             <div className="user-actions">
               <img src={window.user} className="github-icon" />
               <span className="dropdown-btn">Your Profile</span>
@@ -144,10 +158,10 @@ class Header extends React.Component {
           <Link className="logo" to="/">{logo}</Link>
         </div>
         <div className="center-container">
-          <div className="search-input">
-            <input type="text" placeholder="Search" />
-          </div>
-          <button type="button" className="search-btn">{search}</button>
+          <form className="search-input-form" onSubmit={this.handleSearch}>
+            <input className="search-input" type="text" placeholder="Search" value={this.state.search} onChange={this.update('search')}/>
+            <button className="search-btn" type="submit">{search}</button>
+          </form>
         </div>
         <div className="right-container">
           {addVideo}
