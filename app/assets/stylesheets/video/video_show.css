@@ -14,6 +14,13 @@
   max-width: 91%;
 }
 
+@media only screen and (max-width: 1670px) {
+  .video-show-container2 {
+    margin: 0px 24px;
+    max-width: 100%;
+  }
+}
+
 .video-show-left{
   width: 100%;
   height: 100%;

@@ -46,6 +46,12 @@
   margin-left: 50%;
 }
 
+@media only screen and (max-width: 1670px) {
+  .video-upload-margin {
+    margin-right: 24px;
+  }
+}
+
 .user-profile-title {
   font-family: 'Roboto', Arial, sans-serif;
   font-size: 1.2rem;
