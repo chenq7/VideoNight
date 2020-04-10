@@ -71,7 +71,7 @@ class Sidebar extends React.Component {
           </div>
         </Link>
 
-        <Link to="/">
+        <Link to="/trending">
           <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider link-section-bot" : ""}`}>
               <img src={window.trending} className={`sidebar-logo ${this.props.sidebar.show ? "logo-wider" : ""}`}/>
             <span className={`${this.props.sidebar.show ? "font-larger" : ""}`}>

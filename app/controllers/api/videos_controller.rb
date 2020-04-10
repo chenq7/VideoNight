@@ -62,6 +62,11 @@ class Api::VideosController < ApplicationController
     render :index
   end
 
+  def trending
+    @videos = Video.order(:view_count).last(10)
+    render :index
+  end 
+
   def destroy
     @video = current_user.videos.find(params[:id])
     if @video.author_id == current_user.id

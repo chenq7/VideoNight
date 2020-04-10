@@ -19,8 +19,8 @@ Rails.application.routes.draw do
       delete :destroy_like
     end
 
-    get :search, controller: 'videos'
-    
+    get :search, :trending, controller: 'videos'
+
   end
 
   root "static_pages#root"
