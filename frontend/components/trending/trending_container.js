@@ -3,7 +3,6 @@ import Trending from './trending';
 import { fetchTrendingVideos } from '../../actions/trending_actions';
 
 const mapStateToProps = state => {
-  debugger
   return {
     videos: Object.values(state.entities.videos),
     users: state.entities.users,

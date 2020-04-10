@@ -51,11 +51,18 @@ class Sidebar extends React.Component {
     }
   }
 
-  isHighlighted(){
+  isHomepage(input){
     if (this.props.location.pathname === ("/")) {
-      return "home-box home-box-color";
+      return input;
     }
-    return "home-box";
+    return "";
+  }
+
+  isTrendingPage(input) {
+    if (this.props.location.pathname === ("/trending")) {
+      return input;
+    }
+    return "";
   }
 
   sideBar(){
@@ -63,18 +70,18 @@ class Sidebar extends React.Component {
       <div className={`sidebar-container ${ this.props.sidebar.show ? "sidebar-wider" : ""} ${this.isVideoShow()}`}>
         {this.isModalSidebar()}
         <Link to="/">
-          <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider" : ""} ${this.isHighlighted()}`}>
-              <img src={window.home} className={`sidebar-logo home-logo ${this.props.sidebar.show ? "logo-wider" : ""}`}/>
-            <span className={`${this.props.sidebar.show ? "font-larger home-span" : ""}`}>
+          <div className={`sidebar-box home-box ${this.props.sidebar.show ? "box-wider" : ""} ${this.isHomepage("home-box-color")}`}>
+            <img src={window.home} className={`sidebar-logo ${this.props.sidebar.show ? "logo-wider" : ""} ${this.isHomepage("home-logo")}`}/>
+            <span className={`${this.props.sidebar.show ? "font-larger" : ""} ${this.isHomepage("red-color")}`}>
               Home
             </span>
           </div>
         </Link>
 
         <Link to="/trending">
-          <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider link-section-bot" : ""}`}>
-              <img src={window.trending} className={`sidebar-logo ${this.props.sidebar.show ? "logo-wider" : ""}`}/>
-            <span className={`${this.props.sidebar.show ? "font-larger" : ""}`}>
+          <div className={`sidebar-box ${this.props.sidebar.show ? "box-wider link-section-bot" : ""} ${this.isTrendingPage("home-box-color")}`}>
+            <img src={window.trending} className={`sidebar-logo ${this.props.sidebar.show ? "logo-wider" : ""} ${this.isTrendingPage("home-logo")}`}/>
+            <span className={`${this.props.sidebar.show ? "font-larger" : ""} ${this.isTrendingPage("red-color")}`}>
               Trending
             </span>
           </div>
