@@ -57,9 +57,9 @@ class UserProfile extends React.Component {
             {userVideos.map(video => {
               return (
                 <div className="single-video-container">
-                  <Link to={`/videos/${video.id}`} className="single-video" key={video.id}>
+                  <div>
                     < VideoIndexItem video={video} key={video.id} user={currentUser.username} />
-                  </Link>
+                  </div>
                   <div className="edit-video-div">
                     <button className="edit-video-btn" onClick={(e) => this.handleEdit(e, video)}>Edit</button>
                     <button className="edit-video-btn" onClick={(e) => this.handleDelete(e, video.id)}>Delete</button>

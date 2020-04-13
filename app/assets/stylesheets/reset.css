@@ -50,6 +50,6 @@ button, input[type="submit"] {
 } 
 
 html, body, .app-container {
-  height: 100%;
+  height: auto;
   width: 100%;
 }

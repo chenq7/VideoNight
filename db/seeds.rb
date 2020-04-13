@@ -30,6 +30,11 @@ nayan = User.create({username: "Nayan", email: "nayan@gmail.com", password: "tem
 not_a_troll = User.create({username: "Not a Troll", email: "notatroll@gmail.com", password: "temppassword"})
 
 udacity = User.create({username: "Udacity", email: "udacity@gmail.com", password: "temppassword"})
+seal_angel = User.create({username: "SealAngel", email: "seal@gmail.com", password: "temppassword"})
+i_need_likes = User.create({username: "I Need Likes", email: "needlikes@gmail.com", password: "tempppassword"})
+blue_milk = User.create({username: "Blue Milk", email: "blue@gmail.com", password: "tempppassword"})
+martin = User.create({username: "Martin", email: "martin@gmail.com", password: "temppassword"})
+i_like_learning = User.create({username: "I like Learning", email: "l@gmail.com", password: "temppassword"})
 
 # Video Tables
 
@@ -248,6 +253,119 @@ Like.create({is_liked: false, user_id: 12, likeable_type: "Video", likeable_id: 
 
 # Comment seeds
 
+Comment.create({body: '"Evacuate the city". Black Panther knew the Corona Virus was coming.', user_id: seal_angel.id, video_id: 1})
+Comment.create({body: "Anyone watching in April 2020 like here", user_id: i_need_likes.id, video_id: 1})
+Comment.create({body: "No movie trailer will ever live up to the hype that this one did", user_id: blue_milk.id, video_id: 1})
+Comment.create({body: "I can’t believe it been 2 years. I remember how hyped I was when this trailer was realised. And when it came the time to go to the cinema I was the most happiest person, for real. And here we are.. EndGame puts an end of 10 years of greatness. I’m a little bit sad about this. A great journey. I’m really looking forward to Phase 4 and 5 and I really hope they bring us masterpiece like Infinity Saga again. Love you, Marvel. Keep it up! Can’t wait for Phase 4.", user_id: martin.id, video_id: 1})
+Comment.create({body: "trash movie", user_id: not_a_troll.id, video_id: 1})
 
+Comment.create({body: 'David Harbour: "I can''t film season four guys, I''m in Russia filming with Marvel." Netflix: "I can work with that"', user_id: martin.id, video_id: 2})
+Comment.create({body: "Eleven really be looking different this season", user_id: blue_milk.id, video_id: 2})
+
+Comment.create({body: "The only reason I'm not scared of this is because Finn Wolfhard is in it", user_id: udacity.id, video_id: 3})
+Comment.create({body: "The ending in this movie was garbage thanks for wasting my time", user_id: meme_user.id, video_id: 3})
+Comment.create({body: "not that scary to be honest", user_id: 1, video_id: 3})
+
+Comment.create({body: "Story seems nice enough. They must have put a lot of time and effort into training all those dinosaurs for this film.", user_id: blue_milk.id, video_id: 4})
+Comment.create({body: "so this is actually where Thanos sent Star Lord", user_id: 1, video_id: 4})
+
+Comment.create({body: "Jessie the tragedy... My face...", user_id: meme_user.id, video_id: 6})
+
+Comment.create({body: "Team Rocket must be traumatized", user_id: 1, video_id: 7})
+Comment.create({body: "I can't tell if this is funny or scary xD", user_id: meme_user.id, video_id: 7})
+
+Comment.create({body: "Is that the same Alolan Marawak or is it a female? Also it dances very good. Like the Pipped Pipper.", user_id: nayan.id, video_id: 8})
+
+Comment.create({body: 'I feel like nintendo saw a kingdom hearts intro cinematic and went "hey, we can do that."', user_id: nayan.id, video_id: 10})
+Comment.create({body: "boring", user_id: not_a_troll.id, video_id: 10})
+
+Comment.create({body: "These videos are very informative, but can you make each one a bit longer?", user_id: martin.id, video_id: 11})
+
+Comment.create({body: "Yes, linearly separable!! 4 straight lines across 4 quadrants!!", user_id: i_like_learning.id , video_id: 13})
+Comment.create({body: "Sebastian pretty funny", user_id: i_need_likes.id, video_id: 13})
+
+Comment.create({body: "It's fantastic, thank you great master, you're a genius!", user_id: seal_angel.id, video_id: 16})
+Comment.create({body: "may I use this for my book trailer project? I'd be very grateful.", user_id: i_need_likes.id, video_id: 16})
+
+Comment.create({body: "Great use of animations and background music!", user_id: martin.id, video_id: 17})
+
+Comment.create({body: "Not very funny", user_id: not_a_troll.id, video_id: 18})
 
 # Comment Like seeds
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Comment", likeable_id: 1})
+Like.create({is_liked: true, user_id: 2, likeable_type: "Comment", likeable_id: 1})
+Like.create({is_liked: true, user_id: 3, likeable_type: "Comment", likeable_id: 1})
+Like.create({is_liked: true, user_id: 4, likeable_type: "Comment", likeable_id: 1})
+Like.create({is_liked: true, user_id: 5, likeable_type: "Comment", likeable_id: 1})
+Like.create({is_liked: true, user_id: 6, likeable_type: "Comment", likeable_id: 1})
+Like.create({is_liked: true, user_id: 7, likeable_type: "Comment", likeable_id: 1})
+Like.create({is_liked: false, user_id: 12, likeable_type: "Comment", likeable_id: 1})
+
+Like.create({is_liked: true, user_id: 15, likeable_type: "Comment", likeable_id: 2})
+Like.create({is_liked: false, user_id: 12, likeable_type: "Comment", likeable_id: 2})
+
+Like.create({is_liked: true, user_id: 5, likeable_type: "Comment", likeable_id: 3})
+Like.create({is_liked: true, user_id: 6, likeable_type: "Comment", likeable_id: 3})
+Like.create({is_liked: true, user_id: 7, likeable_type: "Comment", likeable_id: 3})
+
+Like.create({is_liked: true, user_id: 5, likeable_type: "Comment", likeable_id: 4})
+Like.create({is_liked: true, user_id: 6, likeable_type: "Comment", likeable_id: 4})
+Like.create({is_liked: true, user_id: 7, likeable_type: "Comment", likeable_id: 4})
+Like.create({is_liked: true, user_id: 8, likeable_type: "Comment", likeable_id: 4})
+Like.create({is_liked: true, user_id: 9, likeable_type: "Comment", likeable_id: 4})
+
+Like.create({is_liked: false, user_id: 7, likeable_type: "Comment", likeable_id: 5})
+Like.create({is_liked: false, user_id: 8, likeable_type: "Comment", likeable_id: 5})
+Like.create({is_liked: false, user_id: 9, likeable_type: "Comment", likeable_id: 5})
+
+Like.create({is_liked: true, user_id: 2, likeable_type: "Comment", likeable_id: 6})
+Like.create({is_liked: true, user_id: 3, likeable_type: "Comment", likeable_id: 6})
+Like.create({is_liked: true, user_id: 4, likeable_type: "Comment", likeable_id: 6})
+Like.create({is_liked: true, user_id: 5, likeable_type: "Comment", likeable_id: 6})
+Like.create({is_liked: true, user_id: 6, likeable_type: "Comment", likeable_id: 6})
+Like.create({is_liked: true, user_id: 7, likeable_type: "Comment", likeable_id: 6})
+
+Like.create({is_liked: true, user_id: 4, likeable_type: "Comment", likeable_id: 7})
+Like.create({is_liked: true, user_id: 5, likeable_type: "Comment", likeable_id: 7})
+
+Like.create({is_liked: true, user_id: 4, likeable_type: "Comment", likeable_id: 8})
+Like.create({is_liked: true, user_id: 5, likeable_type: "Comment", likeable_id: 8})
+
+Like.create({is_liked: true, user_id: 4, likeable_type: "Comment", likeable_id: 9})
+Like.create({is_liked: false, user_id: 5, likeable_type: "Comment", likeable_id: 9})
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Comment", likeable_id: 10})
+Like.create({is_liked: true, user_id: 5, likeable_type: "Comment", likeable_id: 10})
+
+Like.create({is_liked: true, user_id: 2, likeable_type: "Comment", likeable_id: 11})
+Like.create({is_liked: true, user_id: 3, likeable_type: "Comment", likeable_id: 11})
+Like.create({is_liked: true, user_id: 4, likeable_type: "Comment", likeable_id: 11})
+Like.create({is_liked: true, user_id: 5, likeable_type: "Comment", likeable_id: 11})
+Like.create({is_liked: true, user_id: 6, likeable_type: "Comment", likeable_id: 11})
+Like.create({is_liked: true, user_id: 7, likeable_type: "Comment", likeable_id: 11})
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Comment", likeable_id: 12})
+Like.create({is_liked: true, user_id: 3, likeable_type: "Comment", likeable_id: 12})
+Like.create({is_liked: true, user_id: 4, likeable_type: "Comment", likeable_id: 12})
+
+Like.create({is_liked: true, user_id: 4, likeable_type: "Comment", likeable_id: 13})
+
+Like.create({is_liked: true, user_id: 1, likeable_type: "Comment", likeable_id: 14})
+
+Like.create({is_liked: true, user_id: 2, likeable_type: "Comment", likeable_id: 17})
+Like.create({is_liked: true, user_id: 3, likeable_type: "Comment", likeable_id: 17})
+
+Like.create({is_liked: false, user_id: 3, likeable_type: "Comment", likeable_id: 18})
+
+Like.create({is_liked: true, user_id: 3, likeable_type: "Comment", likeable_id: 22})
+
+Like.create({is_liked: true, user_id: 3, likeable_type: "Comment", likeable_id: 24})
+Like.create({is_liked: true, user_id: 4, likeable_type: "Comment", likeable_id: 24})
+Like.create({is_liked: true, user_id: 5, likeable_type: "Comment", likeable_id: 24})
+Like.create({is_liked: true, user_id: 6, likeable_type: "Comment", likeable_id: 24})
+
+Like.create({is_liked: false, user_id: 5, likeable_type: "Comment", likeable_id: 25})
+Like.create({is_liked: false, user_id: 6, likeable_type: "Comment", likeable_id: 25})
+Like.create({is_liked: true, user_id: not_a_troll.id, likeable_type: "Comment", likeable_id: 25})
+
