@@ -28,10 +28,19 @@ VideoNight is a video-sharing platform inspired by Youtube that allows users to 
 
 ## Features
 
-### Login and Signup
+### Login and Logout
 
-### Upload / delete videos (modal?)
+![](app/assets/gifs/login.gif)
+
+### Upload and delete video
+
+![](app/assets/gifs/upload.gif)
 
 ### Like and Comment
 
+![](app/assets/gifs/comment.gif)
+
 ### Search and trending page
+
+![](app/assets/gifs/search.gif)
+
