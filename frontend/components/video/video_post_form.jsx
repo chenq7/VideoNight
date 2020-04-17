@@ -127,7 +127,7 @@ class VideoPost extends React.Component {
               </div>
             </div>
             
-            <button type="submit" className="upload-btn" disabled={this.state.disableSubmit}>Upload</button>
+            <button type="submit" className="upload-btn" disabled={this.state.disableSubmit}>{this.state.disableSubmit ? "Loading..." : "Upload"}</button>
             
           </form>
         </div>
