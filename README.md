@@ -2,7 +2,7 @@
 
 ## Introduction
 
-VideoNight is a video-sharing platform inspired by Youtube that allows users to view and upload videos. Users can create an account (or login as demo user) to like and comment on other people's videos as well as upload and edit their own videos on their profile page. The site also features a trending page and a search bar to search for specific videos.
+VideoNight is a video-sharing platform inspired by Youtube that allows users to view and upload videos. Users can create an account (or login as demo user) to like and comment on other people's videos as well as upload and edit their own videos. The site also features a trending page and a search bar to search for specific videos.
 
 ## [Live Link](https://videonight.herokuapp.com/#/) 
 
