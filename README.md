@@ -174,3 +174,9 @@ Search and trending is done using ajax requests to custom routes in the video co
 ```
 
 ### Bonus Features 
+
+ * Implement Youtube's video player UI
+ * Allow users to upload their own profile picture
+ * Allow users to subscribe to other channels  
+ * Add a dark mode theme
+
