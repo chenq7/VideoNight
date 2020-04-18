@@ -32,6 +32,21 @@ VideoNight is a video-sharing platform inspired by Youtube that allows users to 
 
 ![](app/assets/gifs/login.gif)
 
+Clicking the login button will open up the email form component where the user will enter their email address. This email gets sent back to the user controller using an ajax request on a customized 'api/valid_email' route
+
+```
+  def valid_email?
+    @user = User.find_by(email: params[:valid_email][:valid_email])
+    if @user
+      render json: {valid_email: true, username: @user.username }
+    else
+      render json: {valid_email: false}
+    end
+  end
+```
+
+It will display an error if the email is not found or route to the password form component if email is valid. Entering a valid password will login the user and save the session token on the user's browser, or display an error if password is invalid. 
+
 ### Upload and delete video
 
 ![](app/assets/gifs/upload.gif)
