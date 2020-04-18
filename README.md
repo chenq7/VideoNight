@@ -9,11 +9,11 @@ VideoNight is a video-sharing platform inspired by Youtube that allows users to 
 ## Technologies used
 
 * Backend
-  * PostgreSQL
-  * Ruby on Rails
+  * PostgreSQL - v.10.12
+  * Ruby on Rails - v.5.2.3
 * Frontend
-  * React
-  * Redux
+  * React - v.16.12
+  * Redux - v.7.1.3
 * Cloud platforms
   * Amazon Web Services (S3)
   * Heroku
