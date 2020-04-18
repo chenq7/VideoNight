@@ -34,7 +34,6 @@ class VideoPost extends React.Component {
   }
 
   handleSubmit(e) {
-     
     e.preventDefault();
     const formData = new FormData();
     formData.append('video[title]', this.state.title);
@@ -45,13 +44,11 @@ class VideoPost extends React.Component {
     this.setState({ disableSubmit: true });
    
     this.props.createVideo(formData).then((video) => {
-       
       this.props.closeModal();
       this.props.history.push(`/videos/${video.data.video.id}`);
     }, () => {
       this.setState({ disableSubmit: false });
     });
-
   }
 
   displayError(field) {
