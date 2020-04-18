@@ -127,7 +127,7 @@ Likes are created using rails polymorphic associations on videos and comments on
   end
 ```
 
-Liking a video or comment will create a like and unliking will delete the like, as show in the handleLike function below.
+Liking a video or comment will create a like and unliking will delete the like, as shown in the handleLike function below.
 
 ```
   handleLike(e, is_liked){
@@ -159,7 +159,7 @@ Liking a video or comment will create a like and unliking will delete the like, 
 
 ![](app/assets/gifs/search.gif)
 
-Search and trending is done using ajax requests to custom routes in the video controller
+Search and trending are done using ajax requests to custom routes in the video controller
 
 ```
   def search
