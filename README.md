@@ -4,16 +4,16 @@
 
 VideoNight is a video-sharing platform inspired by Youtube that allows users to view and upload videos. Users can create an account (or login as demo user) to like and comment on other people's videos as well as upload and edit their own videos on their profile page. The site also features a trending page and a search bar to search for specific videos.
 
-[Heroku Link](https://videonight.herokuapp.com/#/) 
+## [Live Link](https://videonight.herokuapp.com/#/) 
 
 ## Technologies used
 
 * Backend
-  * PostgreSQL
-  * Ruby on Rails
+  * PostgreSQL - v.10.12
+  * Ruby on Rails - v.5.2.3
 * Frontend
-  * React
-  * Redux
+  * React - v.16.12
+  * Redux - v.7.1.3
 * Cloud platforms
   * Amazon Web Services (S3)
   * Heroku
@@ -31,6 +31,21 @@ VideoNight is a video-sharing platform inspired by Youtube that allows users to 
 ### Login and Logout
 
 ![](app/assets/gifs/login.gif)
+
+Clicking the login button will open up the email form component where the user will enter their email address. This email gets sent back to the user controller using an ajax request on a customized 'api/valid_email' route
+
+```
+  def valid_email?
+    @user = User.find_by(email: params[:valid_email][:valid_email])
+    if @user
+      render json: {valid_email: true, username: @user.username }
+    else
+      render json: {valid_email: false}
+    end
+  end
+```
+
+It will display an error if the email is not found or route to the password form component if email is valid. Entering a valid password will login the user and save the session token on the user's browser, or display an error if password is invalid. 
 
 ### Upload and delete video
 
