@@ -173,6 +173,10 @@ GEM
     nokogiri (1.14.2)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+    open-uri (0.3.0)
+      stringio
+      time
+      uri
     pg (1.4.6)
     pry (0.14.2)
       coderay (~> 1.1)
@@ -246,13 +250,17 @@ GEM
       sprockets (>= 3.0.0)
     streamio-ffmpeg (3.0.2)
       multi_json (~> 1.8)
+    stringio (3.0.5)
     thor (1.2.1)
     tilt (2.1.0)
+    time (0.2.2)
+      date
     timeout (0.3.2)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
+    uri (0.12.1)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -283,6 +291,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  open-uri
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 3.11)
